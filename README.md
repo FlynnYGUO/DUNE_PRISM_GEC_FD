@@ -37,7 +37,7 @@ setup dunetpc v08_62_01 -q e19:py2:prof
 export MRB_PROJECT=larsoft                                                               # Need to set ${MRB_PROJECT} to the master product
 mrb newDev
 source /home/<username>/FDEff/localProducts_larsoft_v08_62_01_e19_prof_py2/setup
-# For example: source /home/wshi/FDEff/localProducts_larsoft_v08_62_01_e19_prof_py2/setup
+# For example: source /home/fyguo/FDEff/localProducts_larsoft_v08_62_01_e19_prof_py2/setup
 
 cd srcs                            
 git clone https://github.com/weishi10141993/myntuples.git                                # First time only, checkout the analysis code from GitHub
