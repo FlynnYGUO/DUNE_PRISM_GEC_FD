@@ -7,7 +7,7 @@
 2. Set up SBU ivy work area
 3. Log in to ivy 
 ```
-ssh -AY fyguo@ivy.physics.sunysb.edu # Log my ivy account
-passwd # Reset my password
-quit # Quit ivy
+ssh -AY fyguo@ivy.physics.sunysb.edu       # Log my ivy account
+passwd                                     # Reset my password
+quit                                       # Quit ivy
 ```
