@@ -42,7 +42,7 @@ source /home/<username>/FDEff/localProducts_larsoft_v08_62_01_e19_prof_py2/setup
 
 cd srcs                            
 git clone https://github.com/weishi10141993/myntuples.git                                # First time only, checkout the analysis code from GitHub
-cp /home/wshi/dune/product_deps  /home/<username>/FDEff/srcs/myntuples/ups/product_deps  # Change version of larsoft, cetbuildtools, and qualifier list for dunetpc v08_62_01
+cp /home/wshi/dune/product_deps  /home/<username>/FDEff/srcs/myntuples/ups/product_deps  # Change version of larsoft, cetbuildtools, and qualifier list for dunetpc v08_62_01. For example: cp /home/wshi/dune/product_deps  /home/fyguo/FDEff/srcs/myntuples/ups/product_deps
 
 mrb uc                                                                                   # Tell mrb to update CMakeLists.txt with the latest version numbers of the products.
 cd ${MRB_BUILDDIR}                                                                       # Go to your build directory
