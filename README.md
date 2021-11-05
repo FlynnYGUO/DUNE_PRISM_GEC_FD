@@ -43,13 +43,19 @@ source /home/<username>/FDEff/localProducts_larsoft_v08_62_01_e19_prof_py2/setup
 cd srcs                            
 git clone https://github.com/weishi10141993/myntuples.git                                # First time only, checkout the analysis code from GitHub
 cp /home/wshi/dune/product_deps  /home/<username>/FDEff/srcs/myntuples/ups/product_deps  # Change version of larsoft, cetbuildtools, and qualifier list for dunetpc v08_62_01  
-#For example: cp /home/wshi/dune/product_deps  /home/fyguo/FDEff/srcs/myntuples/ups/product_deps
+# For example: cp /home/wshi/dune/product_deps  /home/fyguo/FDEff/srcs/myntuples/ups/product_deps
 
 mrb uc                                                                                   # Tell mrb to update CMakeLists.txt with the latest version numbers of the products.
 cd ${MRB_BUILDDIR}                                                                       # Go to your build directory
 mrb z
 mrbsetenv                                                                                # Create the bookkeeping files needed to compile programs.
-#The working build directory is /home/fyguo/FDEff/build_slf6.x86_64
-#The source code directory is /home/fyguo/FDEff/srcs
+# The working build directory is /home/fyguo/FDEff/build_slf6.x86_64
+# The source code directory is /home/fyguo/FDEff/srcs
 mrb install   
+```
+- To run on FD MC files, this produces a TTree in myntuple.root in your work area:
+```
+cd /home/fyguo/FDEff/srcs/myntuples/myntuples/MyEnergyAnalysis
+# For example: cd /home/wshi/FDEff/srcs/myntuples/myntuples/MyEnergyAnalysis
+lar -c MyEnergyAnalysis_ivy.fcl -n 10 -s /storage/shared/cvilela/DUNE_FD_MC/nu_dune10kt_1x2x6_13422341_0_20181123T225730_gen_g4_detsim_reco.root
 ```
