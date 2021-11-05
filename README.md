@@ -23,7 +23,11 @@ chmod +x ./pullProducts
 cd Documents/Codes/DUNE/DUNE_PRISM
 mkdir FDEff                                                                            # First time only
 cd FDEff
-source ~/ups/setup      
+source ~/ups/setup 
+
+STOP HERE!
+
+
 setup git
 setup gitflow
 setup mrb
