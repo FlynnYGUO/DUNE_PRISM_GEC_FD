@@ -9,5 +9,5 @@
 ```
 ssh -AY fyguo@ivy.physics.sunysb.edu       # Log my ivy account
 passwd                                     # Reset my password
-quit                                       # Quit ivy
+exit                                       # Quit ivy
 ```
