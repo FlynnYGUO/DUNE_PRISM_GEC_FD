@@ -4,7 +4,13 @@
 > - https://github.com/weishi10141993/myntuples (DUNE_PRISM)   
 > - https://indico.cern.ch/event/1058873/timetable/  (General Linux). 
 1. [Create a SBU ivy account](https://docs.joyent.com/public-cloud/getting-started/ssh-keys/generating-an-ssh-key-manually)
-2. Set up SBU Ivy work area, copied from Dr. Wei Shi's Github (see Instructions)  
+2. Log into Ivy then Set up SBU Ivy work area, copied from Dr. Wei Shi's Github (see Instructions)  
+- Log in:
+```
+ssh -AY fyguo@ivy.physics.sunysb.edu       # Log my ivy account
+passwd                                     # Reset my password
+exit                                       # Quit ivy
+```
 - Install the DUNE software:
 ```
 # I've done this part, so you can skip it
@@ -20,14 +26,9 @@ chmod +x ./pullProducts
 ```
 - Set up work area on Ivy: (first time only)
 ```
-cd Documents/Codes/DUNE/DUNE_PRISM
-mkdir FDEff                                                                            # First time only
-cd FDEff
-source ~/ups/setup 
-
-STOP HERE!
-
-
+mkdir ~/FDEff                                                                            # First time only
+cd ~/FDEff
+source /home/wshi/ups/setup      
 setup git
 setup gitflow
 setup mrb
@@ -47,12 +48,4 @@ cd ${MRB_BUILDDIR}                                                              
 mrb z
 mrbsetenv                                                                                # Create the bookkeeping files needed to compile programs.
 mrb install   
-
-```
-
-3. Log in to Ivy 
-```
-ssh -AY fyguo@ivy.physics.sunysb.edu       # Log my ivy account
-passwd                                     # Reset my password
-exit                                       # Quit ivy
 ```
