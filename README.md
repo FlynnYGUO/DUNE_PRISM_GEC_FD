@@ -55,7 +55,7 @@ mrb install
 ```
 - To run on FD MC files, this produces a TTree in myntuple.root in your work area:
 ```
-cd /home/fyguo/FDEff/srcs/myntuples/myntuples/MyEnergyAnalysis
-# For example: cd /home/wshi/FDEff/srcs/myntuples/myntuples/MyEnergyAnalysis
+cd /home/<your_username>/FDEff/srcs/myntuples/myntuples/MyEnergyAnalysis
+# For example: cd /home/fyguo/FDEff/srcs/myntuples/myntuples/MyEnergyAnalysis
 lar -c MyEnergyAnalysis_ivy.fcl -n 10 -s /storage/shared/cvilela/DUNE_FD_MC/nu_dune10kt_1x2x6_13422341_0_20181123T225730_gen_g4_detsim_reco.root
 ```
