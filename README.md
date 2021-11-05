@@ -5,7 +5,7 @@
 > - https://indico.cern.ch/event/1058873/timetable/  (General Linux). 
 1. [Create a SBU ivy account](https://docs.joyent.com/public-cloud/getting-started/ssh-keys/generating-an-ssh-key-manually)
 2. Set up SBU ivy work area, copied from Dr. Wei Shi's Github (see Instructions)  
-Install the DUNE software:
+- Install the DUNE software:
 ```
 # I've done this part, so you can skip it
 #
