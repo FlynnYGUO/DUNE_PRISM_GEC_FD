@@ -48,5 +48,7 @@ mrb uc                                                                          
 cd ${MRB_BUILDDIR}                                                                       # Go to your build directory
 mrb z
 mrbsetenv                                                                                # Create the bookkeeping files needed to compile programs.
+#The working build directory is /home/fyguo/FDEff/build_slf6.x86_64
+#The source code directory is /home/fyguo/FDEff/srcs
 mrb install   
 ```
