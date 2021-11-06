@@ -1,2 +1,2 @@
-##Linux commands:
+## Linux commands:
 ``` cd```< go to sub-directory
