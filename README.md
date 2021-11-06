@@ -71,5 +71,5 @@ mrbsetenv
 cd /home/<your_username>/FDEff/srcs/myntuples/myntuples/MyEnergyAnalysis
 # For example: cd /home/fyguo/FDEff/srcs/myntuples/myntuples/MyEnergyAnalysis
 scp <filename> <local directory>                                                         # Transfer file to local laptop (recommend use ROOT locally)
-# For example: scp @ivy.physics.sunysb.edu:/home/wshi/FDEff/srcs/myntuples/myntuples/MyEnergyAnalysis/myntuple.root ~/Documents/Codes/DUNE/DUNE_PRISM/GeometricEfficiencyCorrections
+# For example: scp fyguo@ivy.physics.sunysb.edu:/home/wshi/FDEff/srcs/myntuples/myntuples/MyEnergyAnalysis/myntuple.root ~/Documents/Codes/DUNE/DUNE_PRISM/GeometricEfficiencyCorrections
 ```
