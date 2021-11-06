@@ -8,8 +8,7 @@
 - Log in:
 ```
 ssh -AY fyguo@ivy.physics.sunysb.edu       # Log my ivy account: <username>@ivy.physics.sunysb.edu
-passwd                                     # Reset my password
-rm -rf foldername                          # Delete a non-empty directory in Terminal
+passwd                                     # Reset my password  
 exit                                       # Quit ivy
 ```
 - Install the DUNE software:
