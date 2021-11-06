@@ -5,4 +5,4 @@
 ``` rm ``` Delete a file  
 ``` rm -rf foldername ``` Delete a non-empty directory in Terminal  
 ``` pwd ``` List the current dir.  
-``` scp <your usrname>@ivy.physics.sunysb.edu:/home/wshi/FDEff/srcs/myntuples/myntuples/MyEnergyAnalysis/myntuple.root ~/Documents/Codes/DUNE/DUNE_PRISM/GeometricEfficiencyCorrections ``` Copy one file from Ivy to my local laptop
+``` scp <filename> <local location> ``` Transfer file to local laptop, eg. scp <yourusername>@ivy.physics.sunysb.edu:/home/wshi/FDEff/srcs/myntuples/myntuples/MyEnergyAnalysis/myntuple.root ~/Documents/Codes/DUNE/DUNE_PRISM/GeometricEfficiencyCorrections
