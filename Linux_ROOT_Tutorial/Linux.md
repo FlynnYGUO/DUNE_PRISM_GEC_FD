@@ -4,4 +4,5 @@
 ``` ls ``` List files in this directory  
 ``` rm ``` Delete a file  
 ``` rm -rf foldername ``` Delete a non-empty directory in Terminal  
-
+``` pwd ``` List the current dir.  
+``` scp <your usrname>@ivy.physics.sunysb.edu:/home/wshi/FDEff/srcs/myntuples/myntuples/MyEnergyAnalysis/myntuple.root ~/Documents/Codes/DUNE/DUNE_PRISM/GeometricEfficiencyCorrections ``` Copy one file from Ivy to my local laptop
