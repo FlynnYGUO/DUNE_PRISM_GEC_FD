@@ -72,7 +72,7 @@ cd /home/<your_username>/FDEff/srcs/myntuples/myntuples/MyEnergyAnalysis
 # For example: cd /home/fyguo/FDEff/srcs/myntuples/myntuples/MyEnergyAnalysis
 ```
 
-4. Always transfer file outside the ssh and use ROOT locally
+4. Always transfer file outside the ssh and use ROOT locally:
 > Go back to your local working dir.
 ```
 scp <filename> <local directory>                                                         # Transfer file to local laptop (recommend use ROOT locally)
