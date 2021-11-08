@@ -70,6 +70,11 @@ mrbsetenv
 # Go to your work directory and run your study!
 cd /home/<your_username>/FDEff/srcs/myntuples/myntuples/MyEnergyAnalysis
 # For example: cd /home/fyguo/FDEff/srcs/myntuples/myntuples/MyEnergyAnalysis
+```
+
+4. Always transfer file outside the ssh and use ROOT locally
+> Go back to your local working dir.
+```
 scp <filename> <local directory>                                                         # Transfer file to local laptop (recommend use ROOT locally)
-# For example: scp fyguo@ivy.physics.sunysb.edu:/home/wshi/FDEff/srcs/myntuples/myntuples/MyEnergyAnalysis/myntuple.root ~/Documents/Codes/DUNE/DUNE_PRISM/GeometricEfficiencyCorrections
+# For example: scp fyguo@ivy.physics.sunysb.edu:/home/fyguo/FDEff/srcs/myntuples/myntuples/MyEnergyAnalysis/myntuple.root ~/Documents/Codes/DUNE/DUNE_PRISM/GeometricEfficiencyCorrections
 ```
