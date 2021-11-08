@@ -8,4 +8,6 @@
 ``` pwd ``` List the current dir.  
 ``` scp <filename> <local directory> ``` Transfer file to local laptop
 ``` ls *.pdf ``` List all pdf(png, jpg, etc.) files  
-``` mv <filename> <directory> ``` Move file to another directory
+``` mv <filename> <directory> ``` Move file to another directory  
+``` touch config ``` Create a config file  
+``` open -t config ``` Use default text editor to open this config file  
