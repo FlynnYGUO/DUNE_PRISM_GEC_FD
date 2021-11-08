@@ -76,5 +76,6 @@ cd /home/<your_username>/FDEff/srcs/myntuples/myntuples/MyEnergyAnalysis
 > Go back to your local working dir.
 ```
 scp <filename> <local directory>                                                         # Transfer file to local laptop (recommend use ROOT locally)
-# For example: scp fyguo@ivy.physics.sunysb.edu:/home/fyguo/FDEff/srcs/myntuples/myntuples/MyEnergyAnalysis/myntuple.root ~/Documents/Codes/DUNE/DUNE_PRISM/GeometricEfficiencyCorrections
+# For example: scp fyguo@ivy.physics.sunysb.edu:/home/fyguo/FDEff/srcs/myntuples/myntuples/MyEnergyAnalysis/myntuple.root .
+# . represent the current dir in your local laptop
 ```
