@@ -10,4 +10,4 @@
 ``` ls *.pdf ``` List all pdf(png, jpg, etc.) files  
 ``` mv <filename> <directory> ``` Move file to another directory  
 ``` touch config ``` Create a config file  
-``` open -t config ``` Use default text editor to open this config file  
+``` open -t <filename> ``` Use default text editor to open file  
