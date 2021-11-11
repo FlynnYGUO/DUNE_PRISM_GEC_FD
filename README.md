@@ -4,7 +4,7 @@
 > - https://github.com/weishi10141993/myntuples (DUNE_PRISM)   
 > - https://indico.cern.ch/event/1058873/timetable/  (General Linux). 
 ### 1. [Create a SBU ivy account](https://docs.joyent.com/public-cloud/getting-started/ssh-keys/generating-an-ssh-key-manually)
-### 2. Log into Ivy then Set up SBU Ivy work area (First time only):
+### 2. Log into Ivy then Set up SBU Ivy work area (First time only)
 > Copied from Dr. Wei Shi's Github (see Instructions)  
 - Log in:
 ```
@@ -54,7 +54,7 @@ mrbsetenv                                                                       
 mrb install   
 ```
 
-### 3. Second time log in:
+### 3. Second time log in
 - Log in:
 ```
 ssh -AY fyguo@ivy.physics.sunysb.edu       # Log my ivy account: <username>@ivy.physics.sunysb.edu
@@ -85,3 +85,7 @@ scp <filename> <local directory>                                                
 # For example: scp fyguo@ivy.physics.sunysb.edu:/home/fyguo/FDEff/srcs/myntuples/myntuples/MyEnergyAnalysis/myntuple.root .
 # . represent the current dir in your local laptop
 ```
+
+## II. Instruction for running translation and rotations on FD n-tuples
+> Instructions:  
+> - https://github.com/weishi10141993/DUNE_ND_GeoEff/tree/FD_Wei#instruction-for-running-translation-and-rotations-on-fd-n-tuples (DUNE_PRISM)  
