@@ -54,7 +54,7 @@ mrbsetenv                                                                       
 mrb install   
 ```
 
-### 3. S(Re)compile and (re)run
+### 3. (Re)compile and (re)run
 - Log in:
 ```
 ssh -AY fyguo@ivy.physics.sunysb.edu       # Log my ivy account: <username>@ivy.physics.sunysb.edu
