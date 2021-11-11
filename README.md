@@ -89,3 +89,5 @@ scp <filename> <local directory>                                                
 ## II. Instruction for running translation and rotations on FD n-tuples
 > Instructions:  
 > - https://github.com/weishi10141993/DUNE_ND_GeoEff/tree/FD_Wei#instruction-for-running-translation-and-rotations-on-fd-n-tuples  
+> - Prerequisite: [Produce Ntuple from DUNE FD MC files](https://github.com/FlynnYGUO/DUNE_PRISM#3-second-time-log-in
+). The produced FD n-tuples will be used as input files for the following program to run.
