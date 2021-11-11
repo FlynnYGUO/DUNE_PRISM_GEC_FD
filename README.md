@@ -55,6 +55,11 @@ mrb install
 ```
 
 ### 3. Second time log in:
+- Log in:
+```
+ssh -AY fyguo@ivy.physics.sunysb.edu       # Log my ivy account: <username>@ivy.physics.sunysb.edu
+```
+
 - The next time you login the ivy machine (username@ivy.physics.sunysb.edu), do the following to set up:
 ```
 source /home/wshi/ups/setup
