@@ -4,7 +4,7 @@
 > - https://github.com/weishi10141993/myntuples (DUNE_PRISM)   
 > - https://indico.cern.ch/event/1058873/timetable/  (General Linux). 
 ### 1. [Create a SBU ivy account](https://docs.joyent.com/public-cloud/getting-started/ssh-keys/generating-an-ssh-key-manually)
-2. Log into Ivy then Set up SBU Ivy work area, copied from Dr. Wei Shi's Github (see Instructions)  
+### 2. Log into Ivy then Set up SBU Ivy work area, copied from Dr. Wei Shi's Github (see Instructions)  
 - Log in:
 ```
 ssh -AY fyguo@ivy.physics.sunysb.edu       # Log my ivy account: <username>@ivy.physics.sunysb.edu
@@ -52,13 +52,8 @@ mrbsetenv                                                                       
 # The source code directory is /home/fyguo/FDEff/srcs
 mrb install   
 ```
-- To run on FD MC files, this produces a TTree in myntuple.root in your work area:
-```
-cd /home/<your_username>/FDEff/srcs/myntuples/myntuples/MyEnergyAnalysis
-# For example: cd /home/fyguo/FDEff/srcs/myntuples/myntuples/MyEnergyAnalysis
-lar -c MyEnergyAnalysis_ivy.fcl -n 10 -s /storage/shared/cvilela/DUNE_FD_MC/nu_dune10kt_1x2x6_13422341_0_20181123T225730_gen_g4_detsim_reco.root
-```
-3. The next time you login the ivy machine (username@ivy.physics.sunysb.edu), do the following to set up:
+
+### 3. The next time you login the ivy machine (username@ivy.physics.sunysb.edu), do the following to set up:
 ```
 source /home/wshi/ups/setup
 setup mrb
@@ -66,10 +61,14 @@ setup dunetpc v08_62_01 -q e19:py2:prof
 source /home/<your_username>/FDEff/localProducts_larsoft_v08_62_01_e19_prof_py2/setup
 #For example: source /home/fyguo/FDEff/localProducts_larsoft_v08_62_01_e19_prof_py2/setup
 mrbsetenv
+```
 
-# Go to your work directory and run your study!
+- Produce Ntuple from DUNE FD MC files
+```
 cd /home/<your_username>/FDEff/srcs/myntuples/myntuples/MyEnergyAnalysis
 # For example: cd /home/fyguo/FDEff/srcs/myntuples/myntuples/MyEnergyAnalysis
+lar -c MyEnergyAnalysis_ivy.fcl -n 10 -s /storage/shared/cvilela/DUNE_FD_MC/nu_dune10kt_1x2x6_13422341_0_20181123T225730_gen_g4_detsim_reco.root
+#To run on FD MC files, this produces a TTree in myntuple.root in your work area
 ```
 
 4. Always transfer file outside the ssh and use ROOT locally:
