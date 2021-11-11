@@ -4,14 +4,14 @@
 > - https://github.com/weishi10141993/myntuples (DUNE_PRISM)   
 > - https://indico.cern.ch/event/1058873/timetable/  (General Linux). 
 ### 1. [Create a SBU ivy account](https://docs.joyent.com/public-cloud/getting-started/ssh-keys/generating-an-ssh-key-manually)
-### 2. Log into Ivy then Set up SBU Ivy work area (First time only)
-> Copied from Dr. Wei Shi's Github (see Instructions)  
 - Log in:
 ```
 ssh -AY fyguo@ivy.physics.sunysb.edu       # Log my ivy account: <username>@ivy.physics.sunysb.edu
 passwd                                     # Reset my password  
 exit                                       # Quit ivy
 ```
+### 2. Set up work area (First time only)
+> Copied from Dr. Wei Shi's Github (see Instructions)  
 - Install the DUNE software:
 ```
 # I've done this part, so you can skip it
@@ -54,7 +54,7 @@ mrbsetenv                                                                       
 mrb install   
 ```
 
-### 3. Second time log in
+### 3. S(Re)compile and (re)run
 - Log in:
 ```
 ssh -AY fyguo@ivy.physics.sunysb.edu       # Log my ivy account: <username>@ivy.physics.sunysb.edu
@@ -91,3 +91,16 @@ scp <filename> <local directory>                                                
 > - https://github.com/weishi10141993/DUNE_ND_GeoEff/tree/FD_Wei#instruction-for-running-translation-and-rotations-on-fd-n-tuples  
 > - Prerequisite: [Produce Ntuple from DUNE FD MC files](https://github.com/FlynnYGUO/DUNE_PRISM#3-second-time-log-in
 ). The produced FD n-tuples will be used as input files for the following program to run.
+### 1. Set up work area (First time only)
+```
+cd ~
+mkdir NDEff (first time only)
+cd NDEff
+git clone --recurse-submodules -b FD_Wei https://github.com/weishi10141993/DUNE_ND_GeoEff.git      # Get geoEff library
+# Note for git version (git --version) before 2.13, use: git clone --recursive -b FD_Wei https://github.com/weishi10141993/DUNE_ND_GeoEff.git
+cd DUNE_ND_GeoEff
+source setup.sh                                                                                    # Necessary setups for build
+cmake -DPYTHON_EXECUTABLE:FILEPATH=`which python` .
+make -j geoEff                                                                                     # Build geoEff (can also use: make -j pyGeoEff)
+```
+### 2. (Re)compile and (re)run
