@@ -12,3 +12,4 @@
 ``` touch config ``` Create a config file  
 ``` open -t <filename> ``` Use default text editor to open file    
 ``` git pull ``` Update a local repository from the corresponding remote repository
+``` vi <filename> ``` Open and edit the file. For more info. on vi editor, plz see this [tutorial](https://www.cs.colostate.edu/helpdocs/vi.html)
