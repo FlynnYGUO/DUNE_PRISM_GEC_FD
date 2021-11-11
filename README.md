@@ -71,7 +71,7 @@ lar -c MyEnergyAnalysis_ivy.fcl -n 10 -s /storage/shared/cvilela/DUNE_FD_MC/nu_d
 #To run on FD MC files, this produces a TTree in myntuple.root in your work area
 ```
 
-4. Always transfer file outside the ssh and use ROOT locally:
+### 4. Always transfer file outside the ssh and use ROOT locally:
 > Go back to your local working dir.
 ```
 scp <filename> <local directory>                                                         # Transfer file to local laptop (recommend use ROOT locally)
