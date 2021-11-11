@@ -60,7 +60,7 @@ mrb install
 ssh -AY fyguo@ivy.physics.sunysb.edu       # Log my ivy account: <username>@ivy.physics.sunysb.edu
 ```
 
-- The next time you login the ivy machine (username@ivy.physics.sunysb.edu), do the following to set up:
+- The next time you login the ivy machine (username@ivy.physics.sunysb.edu), do the following to set up
 ```
 source /home/wshi/ups/setup
 setup mrb
@@ -78,7 +78,7 @@ lar -c MyEnergyAnalysis_ivy.fcl -n 10 -s /storage/shared/cvilela/DUNE_FD_MC/nu_d
 #To run on FD MC files, this produces a TTree in myntuple.root in your work area
 ```
 
-- Always transfer file outside the ssh and use ROOT locally:
+- Always transfer file outside the ssh and use ROOT locally
 > Go back to your local working dir.
 ```
 scp <filename> <local directory>                                                         # Transfer file to local laptop (recommend use ROOT locally)
@@ -103,3 +103,19 @@ cmake -DPYTHON_EXECUTABLE:FILEPATH=`which python` .
 make -j geoEff                                                                                     # Build geoEff (can also use: make -j pyGeoEff)
 ```
 ### 2. (Re)compile and (re)run
+- The next time you login the ivy machine, do the following to set up
+```
+cd NDEff/DUNE_ND_GeoEff/
+#
+# In case you log out, need to source setup.sh to setup ROOT
+#
+source setup.sh                                                                           
+```
+- Produce a root file containing throws and the hadron throw result
+```
+cd NDEff/DUNE_ND_GeoEff/app
+vi runGeoEffFDEvtSim                                                                               # Change some commands like the location of the input file to my directory
+make runGeoEffFDEvtSim                                                                             # Compile program
+cd ../bin
+./runGeoEffFDEvtSim  
+```
