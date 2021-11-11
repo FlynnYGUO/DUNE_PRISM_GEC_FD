@@ -4,7 +4,8 @@
 > - https://github.com/weishi10141993/myntuples (DUNE_PRISM)   
 > - https://indico.cern.ch/event/1058873/timetable/  (General Linux). 
 ### 1. [Create a SBU ivy account](https://docs.joyent.com/public-cloud/getting-started/ssh-keys/generating-an-ssh-key-manually)
-### 2. Log into Ivy then Set up SBU Ivy work area, copied from Dr. Wei Shi's Github (see Instructions)  
+### 2. Log into Ivy then Set up SBU Ivy work area (First time only):
+> Copied from Dr. Wei Shi's Github (see Instructions)  
 - Log in:
 ```
 ssh -AY fyguo@ivy.physics.sunysb.edu       # Log my ivy account: <username>@ivy.physics.sunysb.edu
@@ -53,7 +54,8 @@ mrbsetenv                                                                       
 mrb install   
 ```
 
-### 3. The next time you login the ivy machine (username@ivy.physics.sunysb.edu), do the following to set up:
+### 3. Second time log in:
+- The next time you login the ivy machine (username@ivy.physics.sunysb.edu), do the following to set up:
 ```
 source /home/wshi/ups/setup
 setup mrb
@@ -71,7 +73,7 @@ lar -c MyEnergyAnalysis_ivy.fcl -n 10 -s /storage/shared/cvilela/DUNE_FD_MC/nu_d
 #To run on FD MC files, this produces a TTree in myntuple.root in your work area
 ```
 
-### 4. Always transfer file outside the ssh and use ROOT locally:
+- Always transfer file outside the ssh and use ROOT locally:
 > Go back to your local working dir.
 ```
 scp <filename> <local directory>                                                         # Transfer file to local laptop (recommend use ROOT locally)
