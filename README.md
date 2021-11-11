@@ -3,7 +3,7 @@
 > Instructions:  
 > - https://github.com/weishi10141993/myntuples (DUNE_PRISM)   
 > - https://indico.cern.ch/event/1058873/timetable/  (General Linux). 
-1. [Create a SBU ivy account](https://docs.joyent.com/public-cloud/getting-started/ssh-keys/generating-an-ssh-key-manually)
+### 1. [Create a SBU ivy account](https://docs.joyent.com/public-cloud/getting-started/ssh-keys/generating-an-ssh-key-manually)
 2. Log into Ivy then Set up SBU Ivy work area, copied from Dr. Wei Shi's Github (see Instructions)  
 - Log in:
 ```
