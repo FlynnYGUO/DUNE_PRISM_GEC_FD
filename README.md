@@ -88,4 +88,4 @@ scp <filename> <local directory>                                                
 
 ## II. Instruction for running translation and rotations on FD n-tuples
 > Instructions:  
-> - https://github.com/weishi10141993/DUNE_ND_GeoEff/tree/FD_Wei#instruction-for-running-translation-and-rotations-on-fd-n-tuples (DUNE_PRISM)  
+> - https://github.com/weishi10141993/DUNE_ND_GeoEff/tree/FD_Wei#instruction-for-running-translation-and-rotations-on-fd-n-tuples  
