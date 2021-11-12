@@ -124,7 +124,7 @@ cd ../bin
 ## III. Calculating FD event efficiency 
 > Instructions:  
 > - Prerequisite: [Produced root file from running translation and rotations on FD n-tuples](https://github.com/weishi10141993/DUNE_ND_GeoEff/tree/FD_Wei#instruction-for-calculate-fd-event-efficiency). The produced FD root file containing throws and the hadron throw result will be used as input files for the following program to run.
-1. Calculate FD event hadron containment efficiency 
+### 1. Calculate FD event hadron containment efficiency 
 ```
 cd NDEff/DUNE_ND_GeoEff
 source setup.sh
