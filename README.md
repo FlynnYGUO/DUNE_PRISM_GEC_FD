@@ -86,10 +86,10 @@ scp <filename> <local directory>                                                
 # . represent the current dir in your local laptop
 ```
 
-## II. Instruction for running translation and rotations on FD n-tuples
+## II. Running translation and rotations on FD n-tuples
 > Instructions:  
 > - https://github.com/weishi10141993/DUNE_ND_GeoEff/tree/FD_Wei#instruction-for-running-translation-and-rotations-on-fd-n-tuples  
-> - Prerequisite: [Produce Ntuple from DUNE FD MC files](https://github.com/FlynnYGUO/DUNE_PRISM/blob/main/README.md#3-recompile-and-rerun). The produced FD n-tuples will be used as input files for the following program to run.
+> - Prerequisite: [Produced root file from DUNE FD MC files](https://github.com/FlynnYGUO/DUNE_PRISM/blob/main/README.md#3-recompile-and-rerun). The produced FD n-tuples will be used as input files for the following program to run.
 ### 1. Set up work area (First time only)
 ```
 cd ~
@@ -114,8 +114,23 @@ source setup.sh
 - Produce a root file containing throws and the hadron throw result
 ```
 cd NDEff/DUNE_ND_GeoEff/app
-vi runGeoEffFDEvtSim                                                                               # Change some commands like the location of the input file to my directory
+vi runGeoEffFDEvtSim                                                                               
+# Change some commands like the location of the input file to my directory
 make runGeoEffFDEvtSim                                                                             # Compile program
 cd ../bin
 ./runGeoEffFDEvtSim  
+```
+
+## III. Calculating FD event efficiency 
+> Instructions:  
+> - Prerequisite: [Produced root file from running translation and rotations on FD n-tuples](https://github.com/weishi10141993/DUNE_ND_GeoEff/tree/FD_Wei#instruction-for-calculate-fd-event-efficiency). The produced FD root file containing throws and the hadron throw result will be used as input files for the following program to run.
+- Calculate FD event hadron containment efficiency 
+```
+cd NDEff/DUNE_ND_GeoEff
+source setup.sh
+cd app
+vi FDEffCalc.C
+# Change some commands like the location of the input file to my directory
+root -l -b -q FDEffCalc.C
+# 5k evts: 10mins
 ```
