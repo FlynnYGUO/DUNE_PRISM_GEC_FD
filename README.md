@@ -82,9 +82,9 @@ lar -c MyEnergyAnalysis_ivy.fcl -n 10 -s /storage/shared/cvilela/DUNE_FD_MC/nu_d
 > You can use these files on ivy: /storage/shared/cvilela/DUNE_FD_MC/nu_dune10kt_1x2x6_13422341_0_20181123T225730_gen_g4_detsim_reco.root
 /storage/shared/cvilela/DUNE_FD_MC/nu_dune10kt_1x2x6_13422362_0_20181123T225714_gen_g4_detsim_reco.root
 can add as many as you want (each file should have 100 events, so you probably can use all 10 nu_dune10kt*.root files there)  
-Then run this for all events (-n -1 means run all events, -n 10 just ran 10 events)
 ```
 lar -c MyEnergyAnalysis_ivy.fcl -n -1
+#Run this for all events (-n -1 means run all events, -n 10 just ran 10 events)
 ```
 
 - Always transfer file outside the ssh and use ROOT locally
