@@ -84,7 +84,7 @@ lar -c MyEnergyAnalysis_ivy.fcl -n 10 -s /storage/shared/cvilela/DUNE_FD_MC/nu_d
 can add as many as you want (each file should have 100 events, so you probably can use all 10 nu_dune10kt*.root files there)  
 ```
 lar -c MyEnergyAnalysis_ivy.fcl -n -1
-#Run this for all events (-n -1 means run all events, -n 10 just ran 10 events)
+# Run this for all events (-n -1 means run all events, -n 10 just ran 10 events)
 ```
 
 - Always transfer file outside the ssh and use ROOT locally
