@@ -2,7 +2,7 @@
 ## I. Preparations 
 > Instructions:  
 > Most copied from Dr. Wei Shi's Github:
-> - https://github.com/weishi10141993/myntuples (DUNE_PRISM)    
+> - https://github.com/weishi10141993/myntuples 
 > - https://github.com/weishi10141993/DUNE_ND_GeoEff/tree/FD_Wei#instruction-for-running-translation-and-rotations-on-fd-n-tuples
  
 ### 1. [Create a SBU ivy account](https://docs.joyent.com/public-cloud/getting-started/ssh-keys/generating-an-ssh-key-manually)
