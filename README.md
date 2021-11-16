@@ -1,8 +1,10 @@
 # DUNE_PRISM
 ## I. Preparations 
 > Instructions:  
-> - https://github.com/weishi10141993/myntuples (DUNE_PRISM)   
-> - https://indico.cern.ch/event/1058873/timetable/  (General Linux). 
+> Most copied from Dr. Wei Shi's Github:
+> - https://github.com/weishi10141993/myntuples (DUNE_PRISM)    
+> - https://github.com/weishi10141993/DUNE_ND_GeoEff/tree/FD_Wei#instruction-for-running-translation-and-rotations-on-fd-n-tuples
+ 
 ### 1. [Create a SBU ivy account](https://docs.joyent.com/public-cloud/getting-started/ssh-keys/generating-an-ssh-key-manually)
 - Log in:
 ```
@@ -10,8 +12,7 @@ ssh -AY fyguo@ivy.physics.sunysb.edu       # Log my ivy account: <username>@ivy.
 passwd                                     # Reset my password  
 exit                                       # Quit ivy
 ```
-### 2. Set up work area (First time only)
-> Copied from Dr. Wei Shi's Github (see Instructions)  
+### 2. Set up work area (First time only) 
 - Install the DUNE software:
 ```
 # I've done this part, so you can skip it
