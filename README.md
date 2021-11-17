@@ -159,7 +159,7 @@ root -l -b -q FDEffCalc.C
 # 5k evts: 10mins
 ```
 ### 2. Export all graphics in FDEffCalc.root file
+#Go to the working directory, [tutorials](https://root-forum.cern.ch/t/saving-all-graphs-as-png-files/29330)
 ```
-#Go to the working directory
 rootprint FDEffCalc.root
 ```
