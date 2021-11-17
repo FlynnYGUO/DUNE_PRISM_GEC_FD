@@ -158,3 +158,8 @@ vi FDEffCalc.C
 root -l -b -q FDEffCalc.C
 # 5k evts: 10mins
 ```
+### 2. Export all graphics in FDEffCalc.root file
+```
+#Go to the working directory
+rootprint FDEffCalc.root
+```
