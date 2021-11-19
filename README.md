@@ -42,7 +42,7 @@ source /home/<username>/FDEff/localProducts_larsoft_v08_62_01_e19_prof_py2/setup
 # For example: source /home/fyguo/FDEff/localProducts_larsoft_v08_62_01_e19_prof_py2/setup
 
 cd srcs                            
-git clone https://github.com/weishi10141993/myntuples.git                                # First time only, checkout the analysis code from GitHub
+git clone https://github.com/FlynnYGUO/myntuples.git                                     # First time only, checkout the analysis code from GitHub
 cp /home/wshi/dune/product_deps  /home/<username>/FDEff/srcs/myntuples/ups/product_deps  # Change version of larsoft, cetbuildtools, and qualifier list for dunetpc v08_62_01  
 # For example: cp /home/wshi/dune/product_deps  /home/fyguo/FDEff/srcs/myntuples/ups/product_deps
 
@@ -79,7 +79,7 @@ lar -c MyEnergyAnalysis_ivy.fcl -n 10 -s /storage/shared/cvilela/DUNE_FD_MC/nu_d
 #To run on FD MC files, this use 10 events to produce a TTree in myntuple.root in your work area
 ```
 - Re-produce myntuple with more events to have more stats, 
-> change the [input files](https://github.com/weishi10141993/myntuples/blob/main/myntuples/MyEnergyAnalysis/MyEnergyAnalysis_ivy.fcl#L47-L48) in the ivy fcl file
+> change the [input files](https://github.com/FlynnYGUO/myntuples/blob/main/myntuples/MyEnergyAnalysis/MyEnergyAnalysis_ivy.fcl#L47-L48) in the ivy fcl file
 > You can use these files on ivy: /storage/shared/cvilela/DUNE_FD_MC/nu_dune10kt_1x2x6_13422341_0_20181123T225730_gen_g4_detsim_reco.root
 /storage/shared/cvilela/DUNE_FD_MC/nu_dune10kt_1x2x6_13422362_0_20181123T225714_gen_g4_detsim_reco.root
 can add as many as you want (each file should have 100 events, so you probably can use all 10 nu_dune10kt*.root files there)  
@@ -105,7 +105,7 @@ scp <filename> <local directory>                                                
 cd ~
 mkdir NDEff (first time only)
 cd NDEff
-git clone --recurse-submodules -b FD_Wei https://github.com/weishi10141993/DUNE_ND_GeoEff.git      # Get geoEff library
+git clone --recurse-submodules -b FD_Wei https://github.com/FlynnYGUO/DUNE_ND_GeoEff.git      # Get geoEff library
 # Note for git version (git --version) before 2.13, use: git clone --recursive -b FD_Wei https://github.com/weishi10141993/DUNE_ND_GeoEff.git
 cd DUNE_ND_GeoEff
 source setup.sh                                                                                    # Necessary setups for build
@@ -124,8 +124,6 @@ source setup.sh
 - Produce a root file containing throws and the hadron throw result
 ```
 cd NDEff/DUNE_ND_GeoEff/app
-vi runGeoEffFDEvtSim                                                                               
-# Change some commands like the location of the input file to my directory
 make runGeoEffFDEvtSim                                                                             # Compile program
 cd ../bin
 ./runGeoEffFDEvtSim  
@@ -153,8 +151,6 @@ screen -r
 cd NDEff/DUNE_ND_GeoEff
 source setup.sh
 cd app
-vi FDEffCalc.C
-# Change some commands like the location of the input file to my directory
 root -l -b -q FDEffCalc.C
 # 5k evts: 10mins
 ```
