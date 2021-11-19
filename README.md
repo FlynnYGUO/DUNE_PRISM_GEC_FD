@@ -100,8 +100,7 @@ scp <filename> <local directory>                                                
 cd ~
 mkdir NDEff (first time only)
 cd NDEff
-git clone --recurse-submodules -b FD_Wei https://github.com/FlynnYGUO/DUNE_ND_GeoEff.git      # Get geoEff library
-# Note for git version (git --version) before 2.13, use: git clone --recursive -b FD_Wei https://github.com/weishi10141993/DUNE_ND_GeoEff.git
+git clone --recursive -b FD_Wei https://github.com/FlynnYGUO/DUNE_ND_GeoEff.git      # Get geoEff library
 cd DUNE_ND_GeoEff
 source setup.sh                                                                                    # Necessary setups for build
 cmake -DPYTHON_EXECUTABLE:FILEPATH=`which python` .
