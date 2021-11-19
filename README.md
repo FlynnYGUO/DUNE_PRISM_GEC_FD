@@ -123,10 +123,14 @@ make runGeoEffFDEvtSim                                                          
 cd ../bin
 ./runGeoEffFDEvtSim  
 ```
-### 3. Use screen option even w/o connection to Ivy
+### 3. Use screen option even w/o connection to Ivy to (Re)compile and (re)run -- Recommend 
 ```
+cd NDEff/DUNE_ND_GeoEff/
 screen
-# do the enviroment setup, in this case: source setup.sh
+source setup.sh
+cd app/
+make runGeoEffFDEvtSim                                                                             # Compile program
+cd ../bin
 nohup ./runGeoEffFDEvtSim >& out_throws_nohup.log &                                                
 # Check status: jobs -l
 # To detach from the screen session, press Ctrl+a (release) and then d to detach the process/screen.
