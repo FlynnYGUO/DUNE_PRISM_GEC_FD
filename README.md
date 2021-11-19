@@ -38,13 +38,11 @@ setup dunetpc v08_62_01 -q e19:py2:prof
 
 export MRB_PROJECT=larsoft                                                               # Need to set ${MRB_PROJECT} to the master product
 mrb newDev
-source /home/<username>/FDEff/localProducts_larsoft_v08_62_01_e19_prof_py2/setup
-# For example: source /home/fyguo/FDEff/localProducts_larsoft_v08_62_01_e19_prof_py2/setup
+source /home/fyguo/FDEff/localProducts_larsoft_v08_62_01_e19_prof_py2/setup
 
 cd srcs                            
 git clone https://github.com/FlynnYGUO/myntuples.git                                     # First time only, checkout the analysis code from GitHub
-cp /home/wshi/dune/product_deps  /home/<username>/FDEff/srcs/myntuples/ups/product_deps  # Change version of larsoft, cetbuildtools, and qualifier list for dunetpc v08_62_01  
-# For example: cp /home/wshi/dune/product_deps  /home/fyguo/FDEff/srcs/myntuples/ups/product_deps
+cp /home/wshi/dune/product_deps  /home/fyguo/FDEff/srcs/myntuples/ups/product_deps       # Change version of larsoft, cetbuildtools, and qualifier list for dunetpc v08_62_01  
 
 mrb uc                                                                                   # Tell mrb to update CMakeLists.txt with the latest version numbers of the products.
 cd ${MRB_BUILDDIR}                                                                       # Go to your build directory
@@ -66,20 +64,17 @@ ssh -AY fyguo@ivy.physics.sunysb.edu       # Log my ivy account: <username>@ivy.
 source /home/wshi/ups/setup
 setup mrb
 setup dunetpc v08_62_01 -q e19:py2:prof
-source /home/<your_username>/FDEff/localProducts_larsoft_v08_62_01_e19_prof_py2/setup
-#For example: source /home/fyguo/FDEff/localProducts_larsoft_v08_62_01_e19_prof_py2/setup
+source /home/fyguo/FDEff/localProducts_larsoft_v08_62_01_e19_prof_py2/setup
 mrbsetenv
 ```
 
 - Produce Ntuple from DUNE FD MC files
 ```
-cd /home/<your_username>/FDEff/srcs/myntuples/myntuples/MyEnergyAnalysis
-# For example: cd /home/fyguo/FDEff/srcs/myntuples/myntuples/MyEnergyAnalysis
+cd /home/fyguo/FDEff/srcs/myntuples/myntuples/MyEnergyAnalysis
 lar -c MyEnergyAnalysis_ivy.fcl -n 10 -s /storage/shared/cvilela/DUNE_FD_MC/nu_dune10kt_1x2x6_13422341_0_20181123T225730_gen_g4_detsim_reco.root
 #To run on FD MC files, this use 10 events to produce a TTree in myntuple.root in your work area
 ```
 - Re-produce myntuple with more events to have more stats, 
-> change the [input files](https://github.com/FlynnYGUO/myntuples/blob/main/myntuples/MyEnergyAnalysis/MyEnergyAnalysis_ivy.fcl#L47-L48) in the ivy fcl file
 > You can use these files on ivy: /storage/shared/cvilela/DUNE_FD_MC/nu_dune10kt_1x2x6_13422341_0_20181123T225730_gen_g4_detsim_reco.root
 /storage/shared/cvilela/DUNE_FD_MC/nu_dune10kt_1x2x6_13422362_0_20181123T225714_gen_g4_detsim_reco.root
 can add as many as you want (each file should have 100 events, so you probably can use all 10 nu_dune10kt*.root files there)  
