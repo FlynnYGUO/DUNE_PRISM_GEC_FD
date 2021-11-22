@@ -1,6 +1,6 @@
 ## ROOT commands:
 ``` root -l ``` Open ROOT (or just type ROOT)  
-``` TBrowser a ``` Open the TBrowser  
+``` TBrowser b ``` Open the TBrowser  
 ``` .q ``` Quit ROOT  
 ``` ROOT xxx.root``` Open a root file  
 ``` <Folder name>->cd()``` Go into this folder  
