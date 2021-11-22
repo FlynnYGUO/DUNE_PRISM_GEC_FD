@@ -8,3 +8,6 @@
 - https://www.cs.colostate.edu/helpdocs/vi.html
 ## Git
 - https://git-scm.com/docs/gittutorial
+## Terminology 
+- Macro: c file
+- Executable: cpp file
