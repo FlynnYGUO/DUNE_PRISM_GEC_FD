@@ -84,7 +84,7 @@ lar -c MyEnergyAnalysis_ivy.fcl -n -1
 ```
 > - If changed ```MyEnergyAnalysis_module.cc```, recompile the code (do the setup above first):
 ```
-cd ${MRB_BUILDDIR}                        # Go to your build directory
+cd /home/fyguo/FDEff/build_slf6.x86_64    # Go to your build directory
 mrb z                                     # Remove old build directory
 mrbsetenv                                 # Create the bookkeeping files needed to compile programs.
 mrb install                               # Compile the code in ${MRB_SOURCE} and put the results in ${MRB_INSTALL}
