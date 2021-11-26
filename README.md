@@ -82,7 +82,23 @@ can add as many as you want (each file should have 100 events, so you probably c
 lar -c MyEnergyAnalysis_ivy.fcl -n -1
 # Run this for all events (-n -1 means run all events, -n 10 just ran 10 events)
 ```
-
+> - If changed ```MyEnergyAnalysis_module.cc```, recompile the code (do the setup above first):
+```
+cd ${MRB_BUILDDIR}                        # Go to your build directory
+mrb z                                     # Remove old build directory
+mrbsetenv                                 # Create the bookkeeping files needed to compile programs.
+mrb install                               # Compile the code in ${MRB_SOURCE} and put the results in ${MRB_INSTALL}
+```
+> - If added new package in ```srcs``` directory, do ```mrb uc``` and then recompile as above.
+> - To commit changed code changes to remote repository:
+``` 
+git commit
+git push
+```
+> - To commit changed code changes from remote repository:
+``` 
+git pull
+```
 - Always transfer file outside the ssh and use ROOT locally
 > Go back to your local working dir.
 ```
