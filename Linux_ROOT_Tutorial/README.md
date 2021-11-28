@@ -8,6 +8,9 @@
 - https://www.cs.colostate.edu/helpdocs/vi.html
 ## Git
 - https://git-scm.com/docs/gittutorial
+## Atom
+- https://doane-ccla.gitbook.io/docs/git-version-control/git-workflow-github
+- https://flight-manual.atom.io/using-atom/sections/github-package/
 ## Terminology 
 - Macro: c file
 - Executable: cpp file
