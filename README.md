@@ -75,7 +75,7 @@ lar -c MyEnergyAnalysis_ivy.fcl -n 10 -s /storage/shared/cvilela/DUNE_FD_MC/nu_d
 #To run on FD MC files, this use 10 events to produce a TTree in myntuple.root in your work area
 ```
 - Re-produce myntuple with more events to have more stats, 
-> You can use these files on ivy: /storage/shared/cvilela/DUNE_FD_MC/nu_dune10kt_1x2x6_13422341_0_20181123T225730_gen_g4_detsim_reco.root
+> You can use these files on [```MyEnergyAnalysis_ivy.fcl```](https://github.com/FlynnYGUO/myntuples/blob/main/myntuples/MyEnergyAnalysis/MyEnergyAnalysis_ivy.fcl#L47): /storage/shared/cvilela/DUNE_FD_MC/nu_dune10kt_1x2x6_13422341_0_20181123T225730_gen_g4_detsim_reco.root
 /storage/shared/cvilela/DUNE_FD_MC/nu_dune10kt_1x2x6_13422362_0_20181123T225714_gen_g4_detsim_reco.root
 can add as many as you want (each file should have 100 events, so you probably can use all 10 nu_dune10kt*.root files there)  
 ```
