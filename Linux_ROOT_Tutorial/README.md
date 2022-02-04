@@ -12,5 +12,5 @@
 - https://doane-ccla.gitbook.io/docs/git-version-control/git-workflow-github
 - https://flight-manual.atom.io/using-atom/sections/github-package/
 ## Terminology 
-- Macro: c file
-- Executable: cpp file
+- Macro: cpp file
+- Executable: A computer file that contains an encoded sequence of instructions that the system can execute directly when the user clicks the file icon
