@@ -1,5 +1,5 @@
 # DUNE_PRISM
-## I. Preparations 
+## I. Preparations and Generate the FD events
 > Instructions:  
 > Most copied from Dr. Wei Shi's Github:
 > - https://github.com/weishi10141993/myntuples 
