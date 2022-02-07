@@ -138,7 +138,7 @@ make runGeoEffFDEvtSim                                                          
 cd ../bin
 ./runGeoEffFDEvtSim  
 ```
-### 3. Use screen option even w/o connection to Ivy to (Re)compile and (re)run -- Recommend 
+### 3. (Recommend) Use screen option even w/o connection to Ivy to (Re)compile and (re)run 
 ```
 cd NDEff/DUNE_ND_GeoEff/
 screen
