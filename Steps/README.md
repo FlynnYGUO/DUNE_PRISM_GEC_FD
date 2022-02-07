@@ -8,4 +8,5 @@
 
 ## 2. [Manipulate the events generated in the FD and put them into ND detector respectively](https://github.com/FlynnYGUO/DUNE_ND_GeoEff/blob/FD_Wei/app/runGeoEffFDEvtSim.cpp)
 - Add a branch describing the FD hadronic deposit energy in veto region to the TTree that contains the random rotations and translations, then run [```FDplot.cpp```](https://github.com/FlynnYGUO/DUNE_PRISM/blob/main/Steps/Step1/FDplot.cpp) to show the plot. 
+- Apply some cuts for events selection
 - Rotate the position and momentum in Y and Z axis using the [rotation matrix](https://github.com/FlynnYGUO/DUNE_ND_GeoEff/blob/FD_Wei/app/runGeoEffFDEvtSim.cpp#L427-L461)
