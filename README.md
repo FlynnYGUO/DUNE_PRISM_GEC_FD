@@ -1,18 +1,21 @@
 # DUNE_PRISM
-## I. Preparations and generate the FD events
+> Geometric Efficiency Correction
+## FNAL Machine
+## SBU NN Ivy Machine
+### I. Preparations and generate the FD events
 > Instructions:  
 > Most copied from Dr. Wei Shi's Github:
 > - https://github.com/weishi10141993/myntuples 
 > - https://github.com/weishi10141993/DUNE_ND_GeoEff/tree/FD_Wei#instruction-for-running-translation-and-rotations-on-fd-n-tuples
  
-### 1. [Create a SBU ivy account](https://docs.joyent.com/public-cloud/getting-started/ssh-keys/generating-an-ssh-key-manually)
+#### 1. [Create a SBU ivy account](https://docs.joyent.com/public-cloud/getting-started/ssh-keys/generating-an-ssh-key-manually)
 - Log in:
 ```
 ssh -AY fyguo@ivy.physics.sunysb.edu       # Log my ivy account: <username>@ivy.physics.sunysb.edu
 passwd                                     # Reset my password  
 exit                                       # Quit ivy
 ```
-### 2. Set up work area (First time only) 
+#### 2. Set up work area (First time only) 
 - Install the DUNE software:
 ```
 # I've done this part, so you can skip it
@@ -53,7 +56,7 @@ mrbsetenv                                                                       
 mrb install   
 ```
 
-### 3. (Re)compile and (re)run
+#### 3. (Re)compile and (re)run
 - Log in:
 ```
 ssh -AY fyguo@ivy.physics.sunysb.edu       # Log my ivy account: <username>@ivy.physics.sunysb.edu
@@ -107,11 +110,11 @@ scp <filename> <local directory>                                                
 # . represent the current dir in your local laptop
 ```
 
-## II. Running translation and rotations on FD n-tuples
+### II. Running translation and rotations on FD n-tuples
 > Instructions:  
 > - https://github.com/weishi10141993/DUNE_ND_GeoEff/tree/FD_Wei#instruction-for-running-translation-and-rotations-on-fd-n-tuples  
 > - Prerequisite: [Produced root file from DUNE FD MC files](https://github.com/FlynnYGUO/DUNE_PRISM/blob/main/README.md#3-recompile-and-rerun). The produced FD n-tuples will be used as input files for the following program to run.
-### 1. Set up work area (First time only)
+#### 1. Set up work area (First time only)
 ```
 cd ~
 mkdir NDEff (first time only)
@@ -122,7 +125,7 @@ source setup.sh                                                                 
 cmake -DPYTHON_EXECUTABLE:FILEPATH=`which python` .
 make -j geoEff                                                                                     # Build geoEff (can also use: make -j pyGeoEff)
 ```
-### 2. (Re)compile and (re)run
+#### 2. (Re)compile and (re)run
 - The next time you login the ivy machine, do the following to set up
 ```
 cd NDEff/DUNE_ND_GeoEff/
@@ -138,7 +141,7 @@ make runGeoEffFDEvtSim                                                          
 cd ../bin
 ./runGeoEffFDEvtSim  
 ```
-### 3. (Recommend) Use screen option even w/o connection to Ivy to (Re)compile and (re)run 
+#### 3. (Recommend) Use screen option even w/o connection to Ivy to (Re)compile and (re)run 
 ```
 cd NDEff/DUNE_ND_GeoEff/
 screen
@@ -158,10 +161,10 @@ nohup ./runGeoEffFDEvtSim >& out_throws_nohup.log &
 screen -r
 ```
 
-## III. Calculating FD event efficiency 
+### III. Calculating FD event efficiency 
 > Instructions:  
 > - Prerequisite: [Produced root file from running translation and rotations on FD n-tuples](https://github.com/weishi10141993/DUNE_ND_GeoEff/tree/FD_Wei#instruction-for-calculate-fd-event-efficiency). The produced FD root file containing throws and the hadron throw result will be used as input files for the following program to run.
-### 1. Calculate FD event hadron containment efficiency 
+#### 1. Calculate FD event hadron containment efficiency 
 ```
 cd NDEff/DUNE_ND_GeoEff
 source setup.sh
@@ -169,7 +172,7 @@ cd app
 root -l -b -q FDEffCalc.C
 # 5k evts: 10mins
 ```
-### 2. Export all graphics in FDEffCalc.root file
+#### 2. Export all graphics in FDEffCalc.root file
 Go to the working directory, [tutorials](https://root-forum.cern.ch/t/saving-all-graphs-as-png-files/29330)
 ```
 rootprint FDEffCalc.root
