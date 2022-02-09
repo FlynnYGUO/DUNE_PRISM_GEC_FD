@@ -1,6 +1,15 @@
 # DUNE_PRISM
 > Geometric Efficiency Correction
 ## FNAL Machine
+> - [DUNE Computing Tutorial](https://wiki.dunescience.org/wiki/DUNE_Computing_Tutorial_January_2021)
+> - Some [instructions](https://uscms.org/uscms_at_work/physics/computing/getstarted/uaf.shtml#MacBigSur) on connecting the FNAL machine 
+### I. Preparations
+```
+kfnal                                      # Short for kinit -f <username>@FNAL.GOV. In my laptop, alias kfnal="/usr/bin/kinit flynnguo@FNAL.GOV" in ~/.zshrc
+ssh -X flynnguo@dunegpvm15.fnal.gov
+```
+
+
 ## SBU NN Ivy Machine
 ### I. Preparations and generate the FD events
 > Instructions:  
