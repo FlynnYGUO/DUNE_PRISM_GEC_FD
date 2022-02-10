@@ -5,12 +5,38 @@
 > - Some [instructions](https://uscms.org/uscms_at_work/physics/computing/getstarted/uaf.shtml#MacBigSur) on connecting the FNAL machine 
 > Dr. Wei Shi's instruction: https://github.com/weishi10141993/myntuples#dune-fnal-machines-dunegpvm-environment-setup
 ### I. Preparations
+#### 1. [Create a SBU ivy account](https://get-connected.fnal.gov/accessandbadging/access/)
 - Log in:
 ```
 kfnal                                      # Short for kinit -f <username>@FNAL.GOV. In my laptop, alias kfnal="/usr/bin/kinit flynnguo@FNAL.GOV" in ~/.zshrc
 ssh -X flynnguo@dunegpvm15.fnal.gov
+exit                                       # Quit FNAL
 ```
-- Set up
+#### 2. DUNE FNAL machines (dunegpvm*) environment setup
+- Set up (first time only) 
+```
+cd /dune/app/users/flynnguo                                             # Replace with your username for all commands below
+mkdir FDEff (first time only)
+cd FDEff
+
+source /cvmfs/dune.opensciencegrid.org/products/dune/setup_dune.sh
+setup dunetpc v09_22_02 -q e19:debug
+[optional if run interactively] setup_fnal_security                     # A FNAL grid proxy to submit jobs and access data in dCache via xrootd or ifdh.
+
+mrb newDev
+# The prompt ask you to run this:
+source /dune/app/users/<your_username>/inspect/localProducts_larsoft_${LARSOFT_VERSION}_debug_${COMPILER}/setup
+# For example, mine is: source /dune/app/users/flynnguo/FDEff/localProducts_larsoft_v09_22_02_debug_e19/setup
+
+cd srcs
+git clone https://github.com/FlynnYGUO/myntuples.git                    # First time only, checkout the analysis code from GitHub
+
+mrb uc                                                                  # Tell mrb to update CMakeLists.txt with the latest version numbers of the products.
+cd ${MRB_BUILDDIR}                                                      # Go to your build directory
+mrb z
+mrbsetenv                                                               # Create the bookkeeping files needed to compile programs.
+mrb install                                                             # Compile the code in ${MRB_SOURCE} and put the results in ${MRB_INSTALL}
+```
 
 
 ## SBU NN Ivy Machine
