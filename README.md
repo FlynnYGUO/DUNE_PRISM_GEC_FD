@@ -68,6 +68,60 @@ mrb install                               # Compile the code in ${MRB_SOURCE} an
 ```
 scp flynnguo@dunegpvm15.fnal.gov:/dune/app/users/flynnguo/FDEff/srcs/myntuples/myntuples/MyEnergyAnalysis/myntuple.root .
 ```
+### III. Running translation and rotations on FD n-tuples
+> Instructions:  
+> - https://github.com/weishi10141993/DUNE_ND_GeoEff/tree/FD_Wei#instruction-for-running-translation-and-rotations-on-fd-n-tuples 
+> - Prerequisite: [Produced root file from DUNE FD MC files](https://github.com/FlynnYGUO/DUNE_PRISM/blob/main/README.md#3-recompile-and-rerun). The produced FD n-tuples will be used as input files for the following program to run.
+#### 1. Set up work area (First time only)
+```
+cd /dune/app/users/flynnguo 
+mkdir NDEff (first time only)
+cd NDEff
+git clone --recursive -b FD_Wei https://github.com/FlynnYGUO/DUNE_ND_GeoEff.git      # Get geoEff library
+cd DUNE_ND_GeoEff
+source setup.sh                                                                                    # Necessary setups for build
+cmake -DPYTHON_EXECUTABLE:FILEPATH=`which python` .
+make -j geoEff                                                                                     # Build geoEff (can also use: make -j pyGeoEff)
+```
+#### 2. (Re)compile and (re)run
+- The next time you login the ivy machine, do the following to set up
+```
+cd /dune/app/users/flynnguo/NDEff/DUNE_ND_GeoEff/
+#
+# In case you log out, need to source setup.sh to setup ROOT
+#
+source setup.sh                                                                           
+```
+- Produce a root file containing throws and the hadron throw result
+```
+cd /dune/app/users/flynnguo/NDEff/DUNE_ND_GeoEff/app
+make runGeoEffFDEvtSim                                                                             # Compile program
+cd ../bin
+./runGeoEffFDEvtSim  
+```
+#### 3. (Recommend) Use screen option even w/o connection to Ivy to (Re)compile and (re)run 
+```
+cd NDEff/DUNE_ND_GeoEff/
+screen
+source setup.sh
+cd app/
+make runGeoEffFDEvtSim                                                                             # Compile program
+cd ../bin
+nohup ./runGeoEffFDEvtSim >& out_throws_nohup.log &                                                
+# Check status: jobs -l
+# To detach from the screen session, press Ctrl+a (release) and then d to detach the process/screen.
+# To resume detached process, use: screen -r
+# 10k evts: 6.20pm start, end second day 4:52am, 10hrs32mins
+# Copy the output root file into local laptop: scp fyguo@ivy.physics.sunysb.edu:/home/fyguo/NDEff/DUNE_ND_GeoEff/bin/Output_FDGeoEff.root .
+```
+- Resume the screen session
+```
+screen -r
+```
+
+
+
+
 
 ## SBU NN Ivy Machine
 ### I. Preparations and generate the FD events
