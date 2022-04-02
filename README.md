@@ -57,6 +57,14 @@ nohup lar -c MyEnergyAnalysis.fcl -n -1 >& out_myntuple_nohup.log &
 # 10k evts take about 32 minutes
 ```
 - If added new package in srcs directory, do ```mrb uc``` and then recompile as above.
+- If changed ```MyEnergyAnalysis_module.cc```, recompile the code (do the setup above first):
+```
+cd ${MRB_BUILDDIR}                        # Go to your build directory
+mrb z                                     # Remove old build directory
+mrbsetenv                                 # Create the bookkeeping files needed to compile programs.
+mrb install                               # Compile the code in ${MRB_SOURCE} and put the results in ${MRB_INSTALL}
+```
+
 ## SBU NN Ivy Machine
 ### I. Preparations and generate the FD events
 > Instructions:  
