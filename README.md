@@ -38,7 +38,25 @@ mrbsetenv                                                               # Create
 mrb install                                                             # Compile the code in ${MRB_SOURCE} and put the results in ${MRB_INSTALL}
 ```
 
-
+### II. Generate the FD events
+- The next time you login a DUNE FNAL machine (dunegpvm*), do the following to set up:
+```
+source /cvmfs/dune.opensciencegrid.org/products/dune/setup_dune.sh
+setup dunetpc v09_22_02 -q e19:debug
+source /dune/app/users/flynnguo/FDEff/localProducts_larsoft_v09_22_02_debug_e19/setup
+mrbsetenv
+```
+- Produce Ntuple from DUNE FD MC files:
+```
+cd /dune/app/users/flynnguo/FDEff/srcs/myntuples/myntuples/MyEnergyAnalysis
+lar -c MyEnergyAnalysis.fcl -n -1
+# Run this for all events (-n -1 means run all events, -n 10 just ran 10 events)
+# Or run with nohup
+nohup lar -c MyEnergyAnalysis.fcl -n -1 >& out_myntuple_nohup.log &             
+# check status: jobs -l
+# 10k evts take about 32 minutes
+```
+- If added new package in srcs directory, do ```mrb uc``` and then recompile as above.
 ## SBU NN Ivy Machine
 ### I. Preparations and generate the FD events
 > Instructions:  
