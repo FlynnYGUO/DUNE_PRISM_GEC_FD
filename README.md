@@ -64,6 +64,10 @@ mrb z                                     # Remove old build directory
 mrbsetenv                                 # Create the bookkeeping files needed to compile programs.
 mrb install                               # Compile the code in ${MRB_SOURCE} and put the results in ${MRB_INSTALL}
 ```
+- Copy ntuple files back into my local laptop
+```
+scp flynnguo@dunegpvm15.fnal.gov:/dune/app/users/flynnguo/FDEff/srcs/myntuples/myntuples/MyEnergyAnalysis/myntuple.root .
+```
 
 ## SBU NN Ivy Machine
 ### I. Preparations and generate the FD events
