@@ -35,7 +35,7 @@ mrb uc                                                                  # Tell m
 cd ${MRB_BUILDDIR}                                                      # Go to your build directory
 mrb z
 mrbsetenv                                                               # Create the bookkeeping files needed to compile programs.
-mrb install                                                             # Compile the code in ${MRB_SOURCE} and put the results in ${MRB_INSTALL}
+mrb b                                                                   # Compile the code in ${MRB_SOURCE} and put the results in ${MRB_INSTALL}
 ```
 
 ### II. Generate the FD events
