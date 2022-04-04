@@ -50,11 +50,10 @@ mrbsetenv
 ```
 cd /dune/app/users/flynnguo/FDEff/srcs/myntuples/myntuples/MyEnergyAnalysis
 lar -c MyEnergyAnalysis.fcl -n -1
-# Run this for all events (-n -1 means run all events, -n 10 just ran 10 events)
-```
-- Or run with nohup (recommended)
-```nohup lar -c MyEnergyAnalysis.fcl -n -1 >& out_myntuple_nohup.log &             
+//Or run with nohup (recommended)
+nohup lar -c MyEnergyAnalysis.fcl -n -1 >& out_myntuple_nohup.log &             
 # check status: jobs -l
+# Run this for all events (-n -1 means run all events, -n 10 just ran 10 events)
 # 10k evts take about 32 minutes
 ```
 - If added new package in srcs directory, do ```mrb uc``` and then recompile as above.
