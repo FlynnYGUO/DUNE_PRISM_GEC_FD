@@ -50,7 +50,7 @@ mrbsetenv
 ```
 cd /dune/app/users/flynnguo/FDEff/srcs/myntuples/myntuples/MyEnergyAnalysis
 lar -c MyEnergyAnalysis.fcl -n -1
-//Or run with nohup (recommended)
+# Or run with nohup (recommended)
 nohup lar -c MyEnergyAnalysis.fcl -n -1 >& out_myntuple_nohup.log &             
 # check status: jobs -l
 # Run this for all events (-n -1 means run all events, -n 10 just ran 10 events)
