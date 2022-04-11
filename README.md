@@ -101,7 +101,7 @@ cd ../bin
 ```
 #### 3. (Recommend) Use screen option even w/o connection to Ivy to (Re)compile and (re)run 
 ```
-cd NDEff/DUNE_ND_GeoEff/
+cd /dune/app/users/flynnguo/NDEff/DUNE_ND_GeoEff/
 screen
 source setup.sh
 cd app/
