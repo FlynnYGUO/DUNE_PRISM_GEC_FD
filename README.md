@@ -5,7 +5,7 @@
 > - Some [instructions](https://uscms.org/uscms_at_work/physics/computing/getstarted/uaf.shtml#MacBigSur) on connecting the FNAL machine 
 > Dr. Wei Shi's instruction: https://github.com/weishi10141993/myntuples#dune-fnal-machines-dunegpvm-environment-setup
 ### I. Preparations
-#### 1. [Create a SBU ivy account](https://get-connected.fnal.gov/accessandbadging/access/)
+#### 1. [Apply a Fermilab account](https://get-connected.fnal.gov/accessandbadging/access/)
 - Log in:
 ```
 kfnal                                      # Short for kinit -f <username>@FNAL.GOV. In my laptop, alias kfnal="/usr/bin/kinit flynnguo@FNAL.GOV" in ~/.zshrc
