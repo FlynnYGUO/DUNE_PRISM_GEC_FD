@@ -259,9 +259,9 @@ source setup.sh
 - Produce a root file containing throws and the hadron throw result
 ```
 cd NDEff/DUNE_ND_GeoEff/app
-make runGeoEffFDEvtSim                                                                             # Compile program
+make runGeoEffFDEvtSim_ivy                                                                             # Compile program
 cd ../bin
-./runGeoEffFDEvtSim  
+./runGeoEffFDEvtSim_ivy   
 ```
 #### 3. (Recommend) Use screen option even w/o connection to Ivy to (Re)compile and (re)run 
 ```
@@ -269,9 +269,9 @@ cd NDEff/DUNE_ND_GeoEff/
 screen
 source setup.sh
 cd app/
-make runGeoEffFDEvtSim                                                                             # Compile program
+make runGeoEffFDEvtSim_ivy                                                                              # Compile program
 cd ../bin
-nohup ./runGeoEffFDEvtSim >& out_throws_nohup.log &                                                
+nohup ./runGeoEffFDEvtSim_ivy  >& out_throws_nohup.log &                                                
 # Check status: jobs -l
 # To detach from the screen session, press Ctrl+a (release) and then d to detach the process/screen.
 # To resume detached process, use: screen -r
