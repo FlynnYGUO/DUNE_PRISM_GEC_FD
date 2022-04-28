@@ -1,5 +1,5 @@
 # DUNE_PRISM
-> Geometric Efficiency Correction
+> Geometric Efficiency Correction  
 > remote sync from local to ssh: ```rsync -e ssh -avSz ./* fyguo@ivy.physics.sunysb.edu:/home/fyguo/NDEff/DUNE_ND_GeoEff/```
 ## FNAL Machine
 > - [DUNE Computing Tutorial](https://wiki.dunescience.org/wiki/DUNE_Computing_Tutorial_January_2021)
