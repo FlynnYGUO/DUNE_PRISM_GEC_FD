@@ -278,7 +278,7 @@ nohup ./runGeoEffFDEvtSim_ivy  >& out_throws_nohup.log &
 # To detach from the screen session, press Ctrl+a (release) and then d to detach the process/screen.
 # To resume detached process, use: screen -r
 # 10k evts: 6.20pm start, end second day 4:52am, 10hrs32mins
-# Copy the output root file into local laptop: scp fyguo@ivy.physics.sunysb.edu:/home/fyguo/NDEff/DUNE_ND_GeoEff/bin/Output_FDGeoEff.root .
+# Copy the output root file into local laptop: scp fyguo@ivy.physics.sunysb.edu:/home/fyguo/NDEff/DUNE_ND_GeoEff/bin/Output_FDGeoEff_ivy.root .
 ```
 - Resume the screen session
 ```
