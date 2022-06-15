@@ -295,11 +295,11 @@ screen -r
 cd NDEff/DUNE_ND_GeoEff
 source setup.sh
 cd app
-root -l -b -q FDEffCalc.C
+root -l -b -q FDEffCalc_ivy.C
 # 5k evts: 10mins
 ```
 #### 2. Export all graphics in FDEffCalc.root file
 Go to the working directory, [tutorials](https://root-forum.cern.ch/t/saving-all-graphs-as-png-files/29330)
 ```
-rootprint FDEffCalc.root
+rootprint FDEffCalc_ivy.root
 ```
