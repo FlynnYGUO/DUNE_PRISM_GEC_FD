@@ -281,6 +281,7 @@ nohup ./runGeoEffFDEvtSim_ivy  >& out_throws_nohup.log &
 # Copy the output root file into local laptop: 
 # scp fyguo@ivy.physics.sunysb.edu:/home/fyguo/NDEff/DUNE_ND_GeoEff/bin/Output_FDGeoEff_ivy.root .
 # scp fyguo@ivy.physics.sunysb.edu:/home/fyguo/NDEff/DUNE_ND_GeoEff/bin/Output_FDGeoEff_DataCheck_ivy.txt .
+# scp fyguo@ivy.physics.sunysb.edu:/home/fyguo/NDEff/DUNE_ND_GeoEff/bin/Output_FDGeoEff_ThrowCheck_ivy.txt .
 ```
 - Resume the screen session
 ```
