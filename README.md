@@ -298,6 +298,7 @@ cd app
 root -l -b -q FDEffCalc_ivy.C
 # 5k evts: 10mins
 # scp fyguo@ivy.physics.sunysb.edu:/home/fyguo/NDEff/DUNE_ND_GeoEff/app/Output_GeoEff_ivy.txt .
+# scp fyguo@ivy.physics.sunysb.edu:/home/fyguo/NDEff/DUNE_ND_GeoEff/app/Output_GeoEff_ivy.root .
 ```
 #### 2. Export all graphics in FDEffCalc.root file
 Go to the working directory, [tutorials](https://root-forum.cern.ch/t/saving-all-graphs-as-png-files/29330)
