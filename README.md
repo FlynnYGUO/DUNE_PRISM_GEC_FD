@@ -266,7 +266,7 @@ cd ../bin
 ./runGeoEffFDEvtSim_ivy   
 ```
 #### 3. (Recommend) Use screen option even w/o connection to Ivy to (Re)compile and (re)run 
-- Before compile, go to the local directory then synchronize from local to ssh
+- Before compile, go to the local directory then synchronize from local to ssh  
 ``` rsync -e ssh -avSz ./* fyguo@ivy.physics.sunysb.edu:/home/fyguo/NDEff/DUNE_ND_GeoEff/ ```
 - Connect to ssh and recompile
 ```
