@@ -51,6 +51,7 @@ source /cvmfs/dune.opensciencegrid.org/products/dune/setup_dune.sh
 setup dunetpc v09_22_02 -q e19:debug
 source /dune/app/users/flynnguo/FDEff/localProducts_larsoft_v09_22_02_debug_e19/setup
 mrbsetenv
+mrb b
 ```
 - Produce Ntuple from DUNE FD MC files:
 ```
