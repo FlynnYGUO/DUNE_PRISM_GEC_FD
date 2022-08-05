@@ -69,6 +69,7 @@ nohup lar -c MyEnergyAnalysis.fcl -n -1 >& out_myntuple_nohup.log &
 cd ${MRB_BUILDDIR}                        # Go to your build directory
 mrb z                                     # Remove old build directory
 mrbsetenv                                 # Create the bookkeeping files needed to compile programs.
+mrb b
 mrb install                               # Compile the code in ${MRB_SOURCE} and put the results in ${MRB_INSTALL}
 ```
 - Copy ntuple files back into my local laptop
