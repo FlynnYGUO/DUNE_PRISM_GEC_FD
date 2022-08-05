@@ -1,7 +1,11 @@
 # DUNE_PRISM
 > Geometric Efficiency Correction  
-> Remote sync from local to ssh (Ivy): go to local directory and then use ```rsync -e ssh -avSz ./* fyguo@ivy.physics.sunysb.edu:/home/fyguo/NDEff/DUNE_ND_GeoEff/```.  
-> Remote sync from local to ssh (FNAL): ```rsync -e ssh -avSz ./* flynnguo@dunegpvm15.fnal.gov:/dune/app/users/flynnguo/NDEff/DUNE_ND_GeoEff/```.
+> Remote sync from local to ssh (Ivy): go to local directory then use 
+> ```rsync -e ssh -avSz ./* fyguo@ivy.physics.sunysb.edu:/home/fyguo/NDEff/DUNE_ND_GeoEff/```.  
+> ```rsync -e ssh -avSz ./* fyguo@ivy.physics.sunysb.edu:/home/fyguo/FDEff/srcs/myntuples```.  
+> Remote sync from local to ssh (FNAL): go to local directory (eg. DUNE_ND_GeoEff) then use 
+> ```rsync -e ssh -avSz ./* flynnguo@dunegpvm15.fnal.gov:/dune/app/users/flynnguo/NDEff/DUNE_ND_GeoEff/```.
+> ```rsync -e ssh -avSz ./* flynnguo@dunegpvm15.fnal.gov:/dune/app/users/flynnguo/FDEff/srcs/myntuples```.
 ## FNAL Machine
 > - [DUNE Computing Tutorial](https://wiki.dunescience.org/wiki/DUNE_Computing_Tutorial_January_2021)
 > - Some [instructions](https://uscms.org/uscms_at_work/physics/computing/getstarted/uaf.shtml#MacBigSur) on connecting the FNAL machine 
