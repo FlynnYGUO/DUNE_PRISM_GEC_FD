@@ -104,16 +104,13 @@ To check job status,
 jobsub_q --user flynnguo
 # For more options: jobsub_q --help
 ```
-> if exit the ssh, set job client first then check job status
-``` 
-source /cvmfs/dune.opensciencegrid.org/products/dune/setup_dune.sh
-setup jobsub_client
-```
+> if exit the ssh, set job client first then check job status,
+>```source /cvmfs/dune.opensciencegrid.org/products/dune/setup_dune.sh   setup jobsub_client ```
 To fetch job output,  
 ```
 jobsub_fetchlog --jobid=<id> --unzipdir=<dir>
 ```
-
+> At the top of ```run_FDEffTarBall_grid.sh```, you can set these variables:
 
 ### III. Running translation and rotations on FD n-tuples
 > Instructions:  
