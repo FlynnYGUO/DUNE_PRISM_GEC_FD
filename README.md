@@ -104,6 +104,11 @@ To check job status,
 jobsub_q --user flynnguo
 # For more options: jobsub_q --help
 ```
+> if exit the ssh, set job client first then check job status
+``` 
+source /cvmfs/dune.opensciencegrid.org/products/dune/setup_dune.sh
+setup jobsub_client
+```
 To fetch job output,  
 ```
 jobsub_fetchlog --jobid=<id> --unzipdir=<dir>
