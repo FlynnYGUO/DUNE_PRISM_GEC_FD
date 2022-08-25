@@ -45,7 +45,7 @@ mrb b                                                                   # Compil
 ```
 
 ### II. Generate the FD events
-1. General way
+#### 1. General way
 - The next time you login a DUNE FNAL machine (dunegpvm*), do the following to set up:
 ```
 source /cvmfs/dune.opensciencegrid.org/products/dune/setup_dune.sh
@@ -76,8 +76,34 @@ mrb b                                     # Compile the code in ${MRB_SOURCE} an
 ```
 scp flynnguo@dunegpvm15.fnal.gov:/dune/app/users/flynnguo/FDEff/srcs/myntuples/myntuples/MyEnergyAnalysis/myntuple.root .
 ```
-2. Run grid jobs
+#### 2. Run grid jobs (Recommended)
 The instruction is base on the [DUNE computing tutorial](https://wiki.dunescience.org/wiki/DUNE_Computing/Submitting_grid_jobs_May2021#Submit_a_job).
+Once the above is compiled and runs without problem interactively, you can start to produce a tarball. First, you need to have a grid setup for the localProducts as the grid job typically runs on a different machine than your working machine,
+```
+cd /dune/app/users/flynnguo/FDEff/localProducts_larsoft_v09_22_02_debug_e19
+cp setup setup-grid         # make a copy of the setup for grid job
+```
+then in ```setup-grid```, change all ```/dune/app/users/flynnguo``` directory to the worker node working directory ```${_CONDOR_JOB_IWD}```.
+Now get txt file that lists of input files and work env set up script:
+```
+cd /dune/app/users/flynnguo
+cp /dune/app/users/weishi/MCC11FDBeamsim_nu_reco.txt .
+wget https://raw.githubusercontent.com/weishi10141993/NeutrinoPhysics/main/setupFDEffTarBall-grid.sh --no-check-certificate
+```
+Then make the tarball,
+```wget https://raw.githubusercontent.com/weishi10141993/NeutrinoPhysics/main/run_FDEffTarBall_autogrid.sh --no-check-certificate```
+Finally you can submit the job:
+this submits N jobs (since we have 9914 files, N=9914 will run 1 files/job),
+```jobsub_submit -G dune -N 9914 --memory=1000MB --disk=1GB --expected-lifetime=30m --cpu=1 --resource-provides=usage_model=DEDICATED,OPPORTUNISTIC,OFFSITE --tar_file_name=dropbox:///dune/app/users/flynnguo/FDEff.tar.gz --use-cvmfs-dropbox -l '+SingularityImage=\"/cvmfs/singularity.opensciencegrid.org/fermilab/fnal-wn-sl7:latest\"' --append_condor_requirements='(TARGET.HAS_Singularity==true&&TARGET.HAS_CVMFS_dune_opensciencegrid_org==true&&TARGET.HAS_CVMFS_larsoft_opensciencegrid_org==true&&TARGET.CVMFS_dune_opensciencegrid_org_REVISION>=1105&&TARGET.HAS_CVMFS_fifeuser1_opensciencegrid_org==true&&TARGET.HAS_CVMFS_fifeuser2_opensciencegrid_org==true&&TARGET.HAS_CVMFS_fifeuser3_opensciencegrid_org==true&&TARGET.HAS_CVMFS_fifeuser4_opensciencegrid_org==true)' file:///dune/app/users/flynnguo/run_FDEffTarBall_autogrid.sh```
+To check job status,
+```
+jobsub_q --user flynnguo
+# For more options: jobsub_q --help
+```
+To fetch job output,
+```jobsub_fetchlog --jobid=<id> --unzipdir=<dir>```
+
+
 ### III. Running translation and rotations on FD n-tuples
 > Instructions:  
 > - https://github.com/weishi10141993/DUNE_ND_GeoEff/tree/FD_Wei#instruction-for-running-translation-and-rotations-on-fd-n-tuples 
