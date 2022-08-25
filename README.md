@@ -90,18 +90,24 @@ cd /dune/app/users/flynnguo
 cp /dune/app/users/weishi/MCC11FDBeamsim_nu_reco.txt .
 wget https://raw.githubusercontent.com/weishi10141993/NeutrinoPhysics/main/setupFDEffTarBall-grid.sh --no-check-certificate
 ```
-Then make the tarball,
-```wget https://raw.githubusercontent.com/weishi10141993/NeutrinoPhysics/main/run_FDEffTarBall_autogrid.sh --no-check-certificate```
-Finally you can submit the job:
-this submits N jobs (since we have 9914 files, N=9914 will run 1 files/job),
-```jobsub_submit -G dune -N 9914 --memory=1000MB --disk=1GB --expected-lifetime=30m --cpu=1 --resource-provides=usage_model=DEDICATED,OPPORTUNISTIC,OFFSITE --tar_file_name=dropbox:///dune/app/users/flynnguo/FDEff.tar.gz --use-cvmfs-dropbox -l '+SingularityImage=\"/cvmfs/singularity.opensciencegrid.org/fermilab/fnal-wn-sl7:latest\"' --append_condor_requirements='(TARGET.HAS_Singularity==true&&TARGET.HAS_CVMFS_dune_opensciencegrid_org==true&&TARGET.HAS_CVMFS_larsoft_opensciencegrid_org==true&&TARGET.CVMFS_dune_opensciencegrid_org_REVISION>=1105&&TARGET.HAS_CVMFS_fifeuser1_opensciencegrid_org==true&&TARGET.HAS_CVMFS_fifeuser2_opensciencegrid_org==true&&TARGET.HAS_CVMFS_fifeuser3_opensciencegrid_org==true&&TARGET.HAS_CVMFS_fifeuser4_opensciencegrid_org==true)' file:///dune/app/users/flynnguo/run_FDEffTarBall_autogrid.sh```
-To check job status,
+Then make the tarball,  
+```
+wget https://raw.githubusercontent.com/weishi10141993/NeutrinoPhysics/main/run_FDEffTarBall_autogrid.sh --no-check-certificate
+```
+Finally you can submit the job:  
+this submits N jobs (since we have 9914 files, N=9914 will run 1 files/job),  
+```
+jobsub_submit -G dune -N 9914 --memory=1000MB --disk=1GB --expected-lifetime=30m --cpu=1 --resource-provides=usage_model=DEDICATED,OPPORTUNISTIC,OFFSITE --tar_file_name=dropbox:///dune/app/users/flynnguo/FDEff.tar.gz --use-cvmfs-dropbox -l '+SingularityImage=\"/cvmfs/singularity.opensciencegrid.org/fermilab/fnal-wn-sl7:latest\"' --append_condor_requirements='(TARGET.HAS_Singularity==true&&TARGET.HAS_CVMFS_dune_opensciencegrid_org==true&&TARGET.HAS_CVMFS_larsoft_opensciencegrid_org==true&&TARGET.CVMFS_dune_opensciencegrid_org_REVISION>=1105&&TARGET.HAS_CVMFS_fifeuser1_opensciencegrid_org==true&&TARGET.HAS_CVMFS_fifeuser2_opensciencegrid_org==true&&TARGET.HAS_CVMFS_fifeuser3_opensciencegrid_org==true&&TARGET.HAS_CVMFS_fifeuser4_opensciencegrid_org==true)' file:///dune/app/users/flynnguo/run_FDEffTarBall_autogrid.sh
+```
+To check job status,  
 ```
 jobsub_q --user flynnguo
 # For more options: jobsub_q --help
 ```
-To fetch job output,
-```jobsub_fetchlog --jobid=<id> --unzipdir=<dir>```
+To fetch job output,  
+```
+jobsub_fetchlog --jobid=<id> --unzipdir=<dir>
+```
 
 
 ### III. Running translation and rotations on FD n-tuples
