@@ -105,12 +105,21 @@ jobsub_q --user flynnguo
 # For more options: jobsub_q --help
 ```
 > if exit the ssh, set job client first then check job status,
->```source /cvmfs/dune.opensciencegrid.org/products/dune/setup_dune.sh   setup jobsub_client ```
+>```
+>source /cvmfs/dune.opensciencegrid.org/products/dune/setup_dune.sh
+>setup jobsub_client 
+>```
 To fetch job output,  
 ```
 jobsub_fetchlog --jobid=<id> --unzipdir=<dir>
 ```
 > At the top of ```run_FDEffTarBall_grid.sh```, you can set these variables:
+```
+Number of input files to run: STARTLINE, ENDLINE
+Output directory: OUTDIR
+```
+>Here are some reference settings:  
+>300 events (3 file): ```--memory=502MB --disk=0.1GB --expected-lifetime=30m --cpu=1```
 
 ### III. Running translation and rotations on FD n-tuples
 > Instructions:  
