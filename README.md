@@ -45,6 +45,7 @@ mrb b                                                                   # Compil
 ```
 
 ### II. Generate the FD events
+1. General way
 - The next time you login a DUNE FNAL machine (dunegpvm*), do the following to set up:
 ```
 source /cvmfs/dune.opensciencegrid.org/products/dune/setup_dune.sh
@@ -75,6 +76,8 @@ mrb b                                     # Compile the code in ${MRB_SOURCE} an
 ```
 scp flynnguo@dunegpvm15.fnal.gov:/dune/app/users/flynnguo/FDEff/srcs/myntuples/myntuples/MyEnergyAnalysis/myntuple.root .
 ```
+2. Run grid jobs
+The instruction is base on the [DUNE computing tutorial](https://wiki.dunescience.org/wiki/DUNE_Computing/Submitting_grid_jobs_May2021#Submit_a_job).
 ### III. Running translation and rotations on FD n-tuples
 > Instructions:  
 > - https://github.com/weishi10141993/DUNE_ND_GeoEff/tree/FD_Wei#instruction-for-running-translation-and-rotations-on-fd-n-tuples 
