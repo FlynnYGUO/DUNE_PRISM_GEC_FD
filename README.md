@@ -171,7 +171,38 @@ nohup ./runGeoEffFDEvtSim >& out_throws_nohup.log &
 ```
 screen -r
 ```
+#### 4. Run grid jobs (Recommended)
+First get the work env setup:
+```
+cd /dune/app/users/flynnguo
+wget https://raw.githubusercontent.com/FlynnYGUO/NeutrinoPhysics/main/setupNDEff-grid.sh --no-check-certificate
+```
+Suppose the input FD ntuples are in this ```pnfs``` directory,
+```
+/pnfs/dune/persistent/users/flynnguo/myFDntuples
+```
+write the list to txt file,
+```
+ls -d "/pnfs/dune/persistent/users/flynnguo/myFDntuples"/* | sed "s\/pnfs\root://fndca1.fnal.gov:1094/pnfs/fnal.gov/usr\g" > myFDntuples.txt
+# it also changes pnfs to xrootd so that worker node can access
+```
+Now make the tarball,
+```
+tar -czvf NDEff.tar.gz setupNDEff-grid.sh myFDntuples.txt
+# Check the tarball *.tar.gz is indeed created and open with: tar -xf *.tar.gz
+```
+Get the running script,
+```
+wget https://raw.githubusercontent.com/FlynnYGUO/NeutrinoPhysics/main/run_NDEff_autogrid.sh --no-check-certificate
 
+# set the job client
+source /cvmfs/dune.opensciencegrid.org/products/dune/setup_dune.sh
+setup jobsub_client
+
+# this submits N jobs (N = number of input files, so each job runs 1 file)
+jobsub_submit -G dune -N 100 --memory=500MB --disk=1GB --expected-lifetime=120m --cpu=1 --resource-provides=usage_model=DEDICATED,OPPORTUNISTIC,OFFSITE --tar_file_name=dropbox:///dune/app/users/flynnguo/NDEff.tar.gz --use-cvmfs-dropbox -l '+SingularityImage=\"/cvmfs/singularity.opensciencegrid.org/fermilab/fnal-wn-sl7:latest\"' --append_condor_requirements='(TARGET.HAS_Singularity==true&&TARGET.HAS_CVMFS_dune_opensciencegrid_org==true&&TARGET.HAS_CVMFS_larsoft_opensciencegrid_org==true&&TARGET.CVMFS_dune_opensciencegrid_org_REVISION>=1105&&TARGET.HAS_CVMFS_fifeuser1_opensciencegrid_org==true&&TARGET.HAS_CVMFS_fifeuser2_opensciencegrid_org==true&&TARGET.HAS_CVMFS_fifeuser3_opensciencegrid_org==true&&TARGET.HAS_CVMFS_fifeuser4_opensciencegrid_org==true)' file:///dune/app/users/flynnguo/run_NDEff_autogrid.sh
+
+```
 
 
 
