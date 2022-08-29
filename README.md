@@ -109,6 +109,8 @@ jobsub_q --user flynnguo
 >source /cvmfs/dune.opensciencegrid.org/products/dune/setup_dune.sh
 >setup jobsub_client 
 >```
+>Remove all previous jobs
+>```jobsub_rm --help``` to see options
 To fetch job output,  
 ```
 jobsub_fetchlog --jobid=<id> --unzipdir=<dir>
