@@ -94,6 +94,10 @@ Then make the tarball,
 ```
 wget https://raw.githubusercontent.com/weishi10141993/NeutrinoPhysics/main/run_FDEffTarBall_autogrid.sh --no-check-certificate
 ```
+If you updated the FDEff folder
+```
+tar -czvf FDEff.tar.gz FDEff setupFDEffTarBall-grid.sh MCC11FDBeamsim_nu_reco.txt 
+```
 Finally you can submit the job:  
 this submits N jobs (since we have 9914 files, N=9914 will run 1 files/job),  
 ```
