@@ -127,7 +127,7 @@ Output directory: OUTDIR
 >Here are some reference settings:  
 >300 events (3 file): ```--memory=502MB --disk=0.1GB --expected-lifetime=30m --cpu=1```
 
-### III. Running translation and rotations on FD n-tuples
+### III. Running translations and rotations on ND using FD n-tuples
 > Instructions:  
 > - https://github.com/weishi10141993/DUNE_ND_GeoEff/tree/FD_Wei#instruction-for-running-translation-and-rotations-on-fd-n-tuples 
 > - Prerequisite: [Produced root file from DUNE FD MC files](https://github.com/FlynnYGUO/DUNE_PRISM/blob/main/README.md#3-recompile-and-rerun). The produced FD n-tuples will be used as input files for the following program to run.
@@ -322,7 +322,7 @@ scp <filename> <local directory>                                                
 # . represent the current dir in your local laptop
 ```
 
-### II. Running translation and rotations on FD n-tuples
+### II. Running translations and rotations on ND using FD n-tuples
 > Instructions:  
 > - https://github.com/weishi10141993/DUNE_ND_GeoEff/tree/FD_Wei#instruction-for-running-translation-and-rotations-on-fd-n-tuples  
 > - Prerequisite: [Produced root file from DUNE FD MC files](https://github.com/FlynnYGUO/DUNE_PRISM/blob/main/README.md#3-recompile-and-rerun). The produced FD n-tuples will be used as input files for the following program to run.
