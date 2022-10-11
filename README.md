@@ -398,3 +398,14 @@ Go to the working directory, [tutorials](https://root-forum.cern.ch/t/saving-all
 ```
 rootprint FDEffCalc_ivy.root
 ```
+
+
+
+
+## SBU nnhome Machine
+#### 1. Log in:
+```
+ssh -X fyguo@nnhome.physics.sunysb.edu       # Log my ivy account: <username>@ivy.physics.sunysb.edu
+passwd                                     # Reset my password  
+exit                                       # Quit ivy
+```
