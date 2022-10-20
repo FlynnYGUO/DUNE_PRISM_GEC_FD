@@ -1,6 +1,18 @@
 # Collect some common commands used in Linux/ROOT
 ## General Linux
 - https://indico.cern.ch/event/1058873/timetable/ 
+## MacOS Terminal
+> Open .zshrc file (for Apple M1 chip only)
+``` 
+cd ~
+gedit .zshrc &.                     
+```
+> Some alias stored in my laptop
+```
+alias abrew='arch -arm64 /opt/homebrew/bin/brew'
+alias ibrew='arch -x86_64 /usr/local/bin/brew'
+alias kfnal="/usr/bin/kinit flynnguo@FNAL.GOV"
+```
 ## ROOT
 - https://root.cern/root/htmldoc/guides/users-guide/ROOTUsersGuide.html
 - https://root.cern.ch/root/htmldoc/guides/primer/ROOTPrimer.html#root-macros
