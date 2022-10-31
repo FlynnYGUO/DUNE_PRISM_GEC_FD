@@ -161,7 +161,7 @@ make runGeoEffFDEvtSim                                                          
 cd ../bin
 ./runGeoEffFDEvtSim /pnfs/dune/persistent/users/flynnguo/myFDntuples/<xxx>                         # <xxx> is name of one myntuple root file, eg. myntuple_61454381_991.root
 ```
-#### 3. Use screen option even w/o connection to Ivy to (Re)compile and (re)run 
+#### 3. Use screen option even w/o connection to FNAL machine to (Re)compile and (re)run 
 ```
 cd /dune/app/users/flynnguo/NDEff/DUNE_ND_GeoEff/
 screen
