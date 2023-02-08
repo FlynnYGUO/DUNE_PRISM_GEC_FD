@@ -80,7 +80,16 @@ scp flynnguo@dunegpvm15.fnal.gov:/dune/app/users/flynnguo/FDEff/srcs/myntuples/m
 ```
 #### 2. Run grid jobs (Recommended)
 The instruction is base on the [DUNE computing tutorial](https://wiki.dunescience.org/wiki/DUNE_Computing/Submitting_grid_jobs_May2021#Submit_a_job).
-Once the above is compiled and runs without problem interactively, you can start to produce a tarball. First, you need to have a grid setup for the localProducts as the grid job typically runs on a different machine than your working machine,
+Once the above is compiled and runs without problem interactively, you can start to produce a tarball. 
+At the beginning, you need to set the environment
+```
+source /cvmfs/dune.opensciencegrid.org/products/dune/setup_dune.sh
+setup dunetpc v09_22_02 -q e19:debug
+source /dune/app/users/flynnguo/FDEff/localProducts_larsoft_v09_22_02_debug_e19/setup
+mrbsetenv
+mrb b
+```
+First, you need to have a grid setup for the localProducts as the grid job typically runs on a different machine than your working machine,
 ```
 cd /dune/app/users/flynnguo/FDEff/localProducts_larsoft_v09_22_02_debug_e19
 cp setup setup-grid         # make a copy of the setup for grid job
