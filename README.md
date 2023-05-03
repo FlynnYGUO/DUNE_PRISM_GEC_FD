@@ -98,24 +98,39 @@ then in ```setup-grid```, change all ```/dune/app/users/flynnguo``` directory to
 Now get txt file that lists of input files and work env set up script:
 ```
 cd /dune/app/users/flynnguo
-cp /dune/app/users/weishi/MCC11FDBeamsim_nu_reco.txt .
+wget https://raw.githubusercontent.com/weishi10141993/NeutrinoPhysics/main/MCC11FDBeamsim_nu_reco.txt --no-check-certificate
 wget https://raw.githubusercontent.com/weishi10141993/NeutrinoPhysics/main/setupFDEffTarBall-grid.sh --no-check-certificate
 ```
 Then make the tarball,  
 ```
-wget https://raw.githubusercontent.com/weishi10141993/NeutrinoPhysics/main/run_FDEffTarBall_autogrid.sh --no-check-certificate
+tar -czvf FDEff.tar.gz FDEff setupFDEffTarBall-grid.sh MCC11FDBeamsim_nu_reco.txt
+# Check the tarball *.tar.gz is indeed created and open with: tar -xf *.tar.gz
 ```
 If you updated the FDEff folder
 ```
 tar -czvf FDEff.tar.gz FDEff setupFDEffTarBall-grid.sh MCC11FDBeamsim_nu_reco.txt 
 ```
+Now get one of the following grid running scripts
+```
+wget https://raw.githubusercontent.com/weishi10141993/NeutrinoPhysics/main/run_FDEffTarBall_autogrid.sh --no-check-certificate
+# Or this one that allows you to set the number of input files using line number in txt file:
+wget https://raw.githubusercontent.com/weishi10141993/NeutrinoPhysics/main/run_FDEffTarBall_grid.sh --no-check-certificate
+```
 Finally you can submit the job:  
 this submits N jobs (since we have 9914 files, N=9914 will run 1 files/job),  
 ```
-jobsub_submit -G dune -N 9914 --memory=1000MB --disk=1GB --expected-lifetime=60m --cpu=1 --blacklist=US_BNL,WSU-GRID --resource-provides=usage_model=DEDICATED,OPPORTUNISTIC,OFFSITE --tar_file_name=dropbox:///dune/app/users/flynnguo/FDEff.tar.gz --use-cvmfs-dropbox -l '+SingularityImage=\"/cvmfs/singularity.opensciencegrid.org/fermilab/fnal-wn-sl7:latest\"' --append_condor_requirements='(TARGET.HAS_Singularity==true&&TARGET.HAS_CVMFS_dune_opensciencegrid_org==true&&TARGET.HAS_CVMFS_larsoft_opensciencegrid_org==true&&TARGET.CVMFS_dune_opensciencegrid_org_REVISION>=1105&&TARGET.HAS_CVMFS_fifeuser1_opensciencegrid_org==true&&TARGET.HAS_CVMFS_fifeuser2_opensciencegrid_org==true&&TARGET.HAS_CVMFS_fifeuser3_opensciencegrid_org==true&&TARGET.HAS_CVMFS_fifeuser4_opensciencegrid_org==true)' file:///dune/app/users/flynnguo/run_FDEffTarBall_autogrid.sh
+jobsub_submit -G dune -N 9914 --memory=1000MB --disk=1GB --expected-lifetime=30m --cpu=1 --resource-provides=usage_model=DEDICATED,OPPORTUNISTIC,OFFSITE --tar_file_name=dropbox:///dune/app/users/weishi/FDEff.tar.gz --use-cvmfs-dropbox -l '+SingularityImage=\"/cvmfs/singularity.opensciencegrid.org/fermilab/fnal-wn-sl7:latest\"' --append_condor_requirements='(TARGET.HAS_Singularity==true&&TARGET.HAS_CVMFS_dune_opensciencegrid_org==true&&TARGET.HAS_CVMFS_larsoft_opensciencegrid_org==true&&TARGET.CVMFS_dune_opensciencegrid_org_REVISION>=1105&&TARGET.HAS_CVMFS_fifeuser1_opensciencegrid_org==true&&TARGET.HAS_CVMFS_fifeuser2_opensciencegrid_org==true&&TARGET.HAS_CVMFS_fifeuser3_opensciencegrid_org==true&&TARGET.HAS_CVMFS_fifeuser4_opensciencegrid_org==true)' file:///dune/app/users/weishi/run_FDEffTarBall_autogrid.sh
 ```
 > The memory, disk and lifetime are for each single job or single file.
-
+This submit 1 job that will run sequentially your specified range of files,
+```
+jobsub_submit -G dune -N 1 --memory=1000MB --disk=1GB --expected-lifetime=30m --cpu=1 --resource-provides=usage_model=DEDICATED,OPPORTUNISTIC,OFFSITE --tar_file_name=dropbox:///dune/app/users/weishi/FDEff.tar.gz --use-cvmfs-dropbox -l '+SingularityImage=\"/cvmfs/singularity.opensciencegrid.org/fermilab/fnal-wn-sl7:latest\"' --append_condor_requirements='(TARGET.HAS_Singularity==true&&TARGET.HAS_CVMFS_dune_opensciencegrid_org==true&&TARGET.HAS_CVMFS_larsoft_opensciencegrid_org==true&&TARGET.CVMFS_dune_opensciencegrid_org_REVISION>=1105&&TARGET.HAS_CVMFS_fifeuser1_opensciencegrid_org==true&&TARGET.HAS_CVMFS_fifeuser2_opensciencegrid_org==true&&TARGET.HAS_CVMFS_fifeuser3_opensciencegrid_org==true&&TARGET.HAS_CVMFS_fifeuser4_opensciencegrid_org==true)' file:///dune/app/users/weishi/run_FDEffTarBall_grid.sh
+```
+At the top of ```run_FDEffTarBall_grid.sh```, you can set these variables:
+```
+Number of input files to run: STARTLINE, ENDLINE
+Output directory: OUTDIR
+```
 To check job status,  
 ```
 jobsub_q --user flynnguo
@@ -130,13 +145,10 @@ jobsub_q --user flynnguo
 >```jobsub_rm --help``` to see options
 To fetch job output,  
 ```
-jobsub_fetchlog --jobid=<id> --unzipdir=<dir>
+jobsub_fetchlog --jobid=<id> -G dune
+#jobsub_fetchlog --jobid=<id> --unzipdir=<dir>
 ```
-> At the top of ```run_FDEffTarBall_grid.sh```, you can set these variables:
-```
-Number of input files to run: STARTLINE, ENDLINE
-Output directory: OUTDIR
-```
+
 >Here are some reference settings:  
 >300 events (3 file): ```--memory=502MB --disk=0.1GB --expected-lifetime=30m --cpu=1```
 
