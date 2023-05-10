@@ -235,6 +235,11 @@ jobsub_submit -G dune -N 4000 --memory=1.5GB --disk=1GB --expected-lifetime=180m
 
 ```
 
+#### 5. Event displays
+The hadronic hits can be plotted in 2D event displays at FD via: (do the work area setup above first)
+```
+echo 'gROOT->ProcessLine(".L ReadHadronHitNtuple.cpp"); ReadHadronHitNtuple_FD()'| root -l -b
+```
 
 
 
