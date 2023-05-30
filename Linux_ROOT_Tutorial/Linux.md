@@ -2,6 +2,7 @@
 ``` cd ``` Go to sub-directory  
 ``` cd .. ``` Go back to directory  
 ``` ls ``` List files in this directory  
+``` man ls``` Open the manual for ls command  
 ``` ls -a ``` List all files including hiding files in this directory  
 ``` ls -lh ``` List all files including size and time of files   
 ``` ls -lrth ``` List all files including size and time of files   
