@@ -215,7 +215,7 @@ Suppose the input FD ntuples are in this ```pnfs``` directory,
 ```
 write the list to txt file,
 ```
-ls -d "/pnfs/dune/persistent/users/flynnguo/myFDntuples"/* | sed "s\/pnfs\root://fndca1.fnal.gov:1094/pnfs/fnal.gov/usr\g" > myFDntuples.txt
+ls -d "/pnfs/dune/persistent/users/flynnguo/myFDntuples/<myntuple_JOBID>"/* | sed "s\/pnfs\root://fndca1.fnal.gov:1094/pnfs/fnal.gov/usr\g" > myFDntuples.txt
 # it also changes pnfs to xrootd so that worker node can access
 ```
 Now make the tarball,
