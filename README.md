@@ -438,3 +438,9 @@ ssh -X fyguo@nnhome.physics.sunysb.edu       # Log my ivy account: <username>@iv
 passwd                                     # Reset my password  
 exit                                       # Quit ivy
 ```
+
+#### 2. Install packages/tools
+```
+pip install --target=<a directory you specify> uproot  # Install uproot
+source /home/rrazakami/workspace/ROOT/root_binary/bin/thisroot.sh  # Use other's ROOT instead of installing a new one under my repository
+```
