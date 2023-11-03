@@ -1,5 +1,5 @@
 # DUNE_PRISM
-> Geometric Efficiency Correction  
+Geometric Efficiency Correction from hadrons at FD
 > Remote sync from local to ssh (Ivy): go to local directory then use    
 > ```rsync -e ssh -avSz ./* fyguo@ivy.physics.sunysb.edu:/home/fyguo/NDEff/DUNE_ND_GeoEff/```.     
 > ```rsync -e ssh -avSz ./* fyguo@ivy.physics.sunysb.edu:/home/fyguo/FDEff/srcs/myntuples```.    
