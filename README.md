@@ -225,7 +225,7 @@ tar -czvf NDEff.tar.gz setupNDEff-grid.sh myFDntuples.txt
 ```
 Get the running script,
 ```
-wget https://raw.githubusercontent.com/FlynnYGUO/NeutrinoPhysics/main/run_NDEff_autogrid.sh --no-check-certificate
+wget https://raw.githubusercontent.com/FlynnYGUO/NeutrinoPhysics/main/GEC/run_NDEff_autogrid.sh --no-check-certificate
 
 # set the job client
 source /cvmfs/dune.opensciencegrid.org/products/dune/setup_dune.sh
