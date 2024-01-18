@@ -207,7 +207,7 @@ screen -r
 First get the work env setup:
 ```
 cd /dune/app/users/flynnguo
-wget https://raw.githubusercontent.com/FlynnYGUO/NeutrinoPhysics/main/setupNDEff-grid.sh --no-check-certificate
+wget https://raw.githubusercontent.com/FlynnYGUO/NeutrinoPhysics/main/GEC/setupNDEff-grid.sh --no-check-certificate
 ```
 Suppose the input FD ntuples are in this ```pnfs``` directory,
 ```
