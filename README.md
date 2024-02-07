@@ -112,9 +112,9 @@ tar -czvf FDEff.tar.gz FDEff setupFDEffTarBall-grid.sh MCC11FDBeamsim_nu_reco.tx
 ```
 Now get one of the following grid running scripts
 ```
-wget https://raw.githubusercontent.com/weishi10141993/NeutrinoPhysics/main/run_FDEffTarBall_autogrid.sh --no-check-certificate
+wget https://raw.githubusercontent.com/FlynnYGUO/NeutrinoPhysics/main/GEC/run_FDEffTarBall_autogrid.sh --no-check-certificate
 # Or this one that allows you to set the number of input files using line number in txt file:
-wget https://raw.githubusercontent.com/weishi10141993/NeutrinoPhysics/main/run_FDEffTarBall_grid.sh --no-check-certificate
+wget https://raw.githubusercontent.com/FlynnYGUO/NeutrinoPhysics/main/GEC/run_FDEffTarBall_grid.sh --no-check-certificate
 ```
 Finally, you can submit the job: 
 [Fermi jobsub wiki](https://github.com/fermitools/jobsub_lite/wiki#user-documentation)
