@@ -98,8 +98,8 @@ then in ```setup-grid```, change all ```/dune/app/users/flynnguo``` directory to
 Now get txt file that lists of input files and work env set up script:
 ```
 cd /dune/app/users/flynnguo
-wget https://raw.githubusercontent.com/weishi10141993/NeutrinoPhysics/main/MCC11FDBeamsim_nu_reco.txt --no-check-certificate
-wget https://raw.githubusercontent.com/weishi10141993/NeutrinoPhysics/main/setupFDEffTarBall-grid.sh --no-check-certificate
+wget https://raw.githubusercontent.com/FlynnYGUO/NeutrinoPhysics/main/GEC/FDCAFlegacy/MCC11FDBeamSim/MCC11FDBeamsim_nu_reco.txt --no-check-certificate
+wget https://raw.githubusercontent.com/FlynnYGUO/NeutrinoPhysics/main/GEC/setupFDEffTarBall-grid.sh --no-check-certificate
 ```
 Then make the tarball,  
 ```
