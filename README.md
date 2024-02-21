@@ -4,8 +4,8 @@ Geometric Efficiency Correction from hadrons at FD
 > ```rsync -e ssh -avSz ./* fyguo@ivy.physics.sunysb.edu:/home/fyguo/NDEff/DUNE_ND_GeoEff/```.     
 > ```rsync -e ssh -avSz ./* fyguo@ivy.physics.sunysb.edu:/home/fyguo/FDEff/srcs/myntuples```.    
 > Remote sync from local to ssh (FNAL): go to local directory (eg. DUNE_ND_GeoEff) then use   
-> ```rsync -e ssh -avSz ./* flynnguo@dunegpvm15.fnal.gov:/dune/app/users/flynnguo/NDEff/DUNE_ND_GeoEff/```.  
-> ```rsync -e ssh -avSz ./* flynnguo@dunegpvm15.fnal.gov:/dune/app/users/flynnguo/FDEff/srcs/myntuples```.  
+> ```rsync -e ssh -avSz ./* flynnguo@dunegpvm15.fnal.gov:/exp/dune/app/users/flynnguo/NDEff/DUNE_ND_GeoEff/```.  
+> ```rsync -e ssh -avSz ./* flynnguo@dunegpvm15.fnal.gov:/exp/dune/app/users/flynnguo/FDEff/srcs/myntuples```.  
 ## FNAL Machine
 > - [DUNE Computing Tutorial](https://wiki.dunescience.org/wiki/DUNE_Computing_Tutorial_January_2021)
 > - Some [instructions](https://uscms.org/uscms_at_work/physics/computing/getstarted/uaf.shtml#MacBigSur) on connecting the FNAL machine 
@@ -22,7 +22,7 @@ exit                                       # Quit FNAL
 #### 2. DUNE FNAL machines (dunegpvm*) environment setup
 - Set up (first time only) 
 ```
-cd /dune/app/users/flynnguo                                             # Replace with your username for all commands below
+cd /exp/dune/app/users/flynnguo                                             # Replace with your username for all commands below
 mkdir FDEff (first time only)
 cd FDEff
 
@@ -32,8 +32,8 @@ setup dunetpc v09_22_02 -q e19:debug
 
 mrb newDev
 # The prompt ask you to run this:
-source /dune/app/users/<your_username>/inspect/localProducts_larsoft_${LARSOFT_VERSION}_debug_${COMPILER}/setup
-# For example, mine is: source /dune/app/users/flynnguo/FDEff/localProducts_larsoft_v09_22_02_debug_e19/setup
+source /exp/dune/app/users/<your_username>/inspect/localProducts_larsoft_${LARSOFT_VERSION}_debug_${COMPILER}/setup
+# For example, mine is: source /exp/dune/app/users/flynnguo/FDEff/localProducts_larsoft_v09_22_02_debug_e19/setup
 
 cd srcs
 git clone https://github.com/FlynnYGUO/myntuples.git                    # First time only, checkout the analysis code from GitHub
@@ -51,13 +51,13 @@ mrb b                                                                   # Compil
 ```
 source /cvmfs/dune.opensciencegrid.org/products/dune/setup_dune.sh
 setup dunetpc v09_22_02 -q e19:debug
-source /dune/app/users/flynnguo/FDEff/localProducts_larsoft_v09_22_02_debug_e19/setup
+source /exp/dune/app/users/flynnguo/FDEff/localProducts_larsoft_v09_22_02_debug_e19/setup
 mrbsetenv
 mrb b
 ```
 - Produce Ntuple from DUNE FD MC files:
 ```
-cd /dune/app/users/flynnguo/FDEff/srcs/myntuples/myntuples/MyEnergyAnalysis
+cd /exp/dune/app/users/flynnguo/FDEff/srcs/myntuples/myntuples/MyEnergyAnalysis
 lar -c MyEnergyAnalysis.fcl -n -1
 # Or run with nohup (recommended)
 nohup lar -c MyEnergyAnalysis.fcl -n -1 >& out_myntuple_nohup.log &             
@@ -76,7 +76,7 @@ mrb b                                     # Compile the code in ${MRB_SOURCE} an
 ```
 - Copy ntuple files back into my local laptop
 ```
-scp flynnguo@dunegpvm15.fnal.gov:/dune/app/users/flynnguo/FDEff/srcs/myntuples/myntuples/MyEnergyAnalysis/myntuple.root .
+scp flynnguo@dunegpvm15.fnal.gov:/exp/dune/app/users/flynnguo/FDEff/srcs/myntuples/myntuples/MyEnergyAnalysis/myntuple.root .
 ```
 #### 2. Run grid jobs (Recommended)
 The instruction is base on the [DUNE computing tutorial](https://wiki.dunescience.org/wiki/DUNE_Computing/Submitting_grid_jobs_May2021#Submit_a_job).
@@ -85,19 +85,19 @@ At the beginning, you need to set the environment
 ```
 source /cvmfs/dune.opensciencegrid.org/products/dune/setup_dune.sh
 setup dunetpc v09_22_02 -q e19:debug
-source /dune/app/users/flynnguo/FDEff/localProducts_larsoft_v09_22_02_debug_e19/setup
+source /exp/dune/app/users/flynnguo/FDEff/localProducts_larsoft_v09_22_02_debug_e19/setup
 mrbsetenv
 mrb b
 ```
 First, you need to have a grid setup for the localProducts as the grid job typically runs on a different machine than your working machine,
 ```
-cd /dune/app/users/flynnguo/FDEff/localProducts_larsoft_v09_22_02_debug_e19
+cd /exp/dune/app/users/flynnguo/FDEff/localProducts_larsoft_v09_22_02_debug_e19
 cp setup setup-grid         # make a copy of the setup for grid job
 ```
-then in ```setup-grid```, change all ```/dune/app/users/flynnguo``` directory to the worker node working directory ```${_CONDOR_JOB_IWD}```.
+then in ```setup-grid```, change all ```/exp/dune/app/users/flynnguo``` directory to the worker node working directory ```${_CONDOR_JOB_IWD}```.
 Now get txt file that lists of input files and work env set up script:
 ```
-cd /dune/app/users/flynnguo
+cd /exp/dune/app/users/flynnguo
 wget https://raw.githubusercontent.com/FlynnYGUO/NeutrinoPhysics/main/GEC/FDCAFlegacy/MCC11FDBeamSim/MCC11FDBeamsim_nu_reco.txt --no-check-certificate
 wget https://raw.githubusercontent.com/FlynnYGUO/NeutrinoPhysics/main/GEC/setupFDEffTarBall-grid.sh --no-check-certificate
 ```
@@ -120,12 +120,12 @@ Finally, you can submit the job:
 [Fermi jobsub wiki](https://github.com/fermitools/jobsub_lite/wiki#user-documentation)
 this submits N jobs (since we have 9914 files, N=9914 will run 1 files/job),  
 ```
-jobsub_submit -G dune -N 9914 --memory=1GB --disk=1GB --expected-lifetime=180m --cpu=1 --resource-provides=usage_model=DEDICATED,OPPORTUNISTIC,OFFSITE --tar_file_name=dropbox:///dune/app/users/flynnguo/FDEff.tar.gz --use-cvmfs-dropbox -l '+SingularityImage=\"/cvmfs/singularity.opensciencegrid.org/fermilab/fnal-wn-sl7:latest\"' --append_condor_requirements='(TARGET.HAS_Singularity==true&&TARGET.HAS_CVMFS_dune_opensciencegrid_org==true&&TARGET.HAS_CVMFS_larsoft_opensciencegrid_org==true&&TARGET.CVMFS_dune_opensciencegrid_org_REVISION>=1105&&TARGET.HAS_CVMFS_fifeuser1_opensciencegrid_org==true&&TARGET.HAS_CVMFS_fifeuser2_opensciencegrid_org==true&&TARGET.HAS_CVMFS_fifeuser3_opensciencegrid_org==true&&TARGET.HAS_CVMFS_fifeuser4_opensciencegrid_org==true)' file:///dune/app/users/flynnguo/run_FDEffTarBall_autogrid.sh
+jobsub_submit -G dune -N 9914 --memory=1GB --disk=1GB --expected-lifetime=180m --cpu=1 --resource-provides=usage_model=DEDICATED,OPPORTUNISTIC,OFFSITE --tar_file_name=dropbox:///exp/dune/app/users/flynnguo/FDEff.tar.gz --use-cvmfs-dropbox -l '+SingularityImage=\"/cvmfs/singularity.opensciencegrid.org/fermilab/fnal-wn-sl7:latest\"' --append_condor_requirements='(TARGET.HAS_Singularity==true&&TARGET.HAS_CVMFS_dune_opensciencegrid_org==true&&TARGET.HAS_CVMFS_larsoft_opensciencegrid_org==true&&TARGET.CVMFS_dune_opensciencegrid_org_REVISION>=1105&&TARGET.HAS_CVMFS_fifeuser1_opensciencegrid_org==true&&TARGET.HAS_CVMFS_fifeuser2_opensciencegrid_org==true&&TARGET.HAS_CVMFS_fifeuser3_opensciencegrid_org==true&&TARGET.HAS_CVMFS_fifeuser4_opensciencegrid_org==true)' file:///exp/dune/app/users/flynnguo/run_FDEffTarBall_autogrid.sh
 ```
 > The memory, disk and lifetime are for each single job or single file.
 This submit 1 job that will run sequentially your specified range of files,
 ```
-jobsub_submit -G dune -N 1 --memory=1GB --disk=1GB --expected-lifetime=180m --cpu=1 --resource-provides=usage_model=DEDICATED,OPPORTUNISTIC,OFFSITE --tar_file_name=dropbox:///dune/app/users/flynnguo/FDEff.tar.gz --use-cvmfs-dropbox -l '+SingularityImage=\"/cvmfs/singularity.opensciencegrid.org/fermilab/fnal-wn-sl7:latest\"' --append_condor_requirements='(TARGET.HAS_Singularity==true&&TARGET.HAS_CVMFS_dune_opensciencegrid_org==true&&TARGET.HAS_CVMFS_larsoft_opensciencegrid_org==true&&TARGET.CVMFS_dune_opensciencegrid_org_REVISION>=1105&&TARGET.HAS_CVMFS_fifeuser1_opensciencegrid_org==true&&TARGET.HAS_CVMFS_fifeuser2_opensciencegrid_org==true&&TARGET.HAS_CVMFS_fifeuser3_opensciencegrid_org==true&&TARGET.HAS_CVMFS_fifeuser4_opensciencegrid_org==true)' file:///dune/app/users/flynnguo/run_FDEffTarBall_autogrid.sh
+jobsub_submit -G dune -N 1 --memory=1GB --disk=1GB --expected-lifetime=180m --cpu=1 --resource-provides=usage_model=DEDICATED,OPPORTUNISTIC,OFFSITE --tar_file_name=dropbox:///exp/dune/app/users/flynnguo/FDEff.tar.gz --use-cvmfs-dropbox -l '+SingularityImage=\"/cvmfs/singularity.opensciencegrid.org/fermilab/fnal-wn-sl7:latest\"' --append_condor_requirements='(TARGET.HAS_Singularity==true&&TARGET.HAS_CVMFS_dune_opensciencegrid_org==true&&TARGET.HAS_CVMFS_larsoft_opensciencegrid_org==true&&TARGET.CVMFS_dune_opensciencegrid_org_REVISION>=1105&&TARGET.HAS_CVMFS_fifeuser1_opensciencegrid_org==true&&TARGET.HAS_CVMFS_fifeuser2_opensciencegrid_org==true&&TARGET.HAS_CVMFS_fifeuser3_opensciencegrid_org==true&&TARGET.HAS_CVMFS_fifeuser4_opensciencegrid_org==true)' file:///exp/dune/app/users/flynnguo/run_FDEffTarBall_autogrid.sh
 ```
 At the top of ```run_FDEffTarBall_grid.sh```, you can set these variables:
 ```
@@ -159,7 +159,7 @@ jobsub_fetchlog --jobid=<id> -G dune
 > - Prerequisite: [Produced root file from DUNE FD MC files](https://github.com/FlynnYGUO/DUNE_PRISM/blob/main/README.md#3-recompile-and-rerun). The produced FD n-tuples will be used as input files for the following program to run.
 #### 1. Set up work area (First time only)
 ```
-cd /dune/app/users/flynnguo 
+cd /exp/dune/app/users/flynnguo 
 mkdir NDEff (first time only)
 cd NDEff
 git clone --recursive -b FD_Wei https://github.com/FlynnYGUO/DUNE_ND_GeoEff.git      # Get geoEff library
@@ -171,7 +171,7 @@ make -j geoEff                                                                  
 #### 2. (Re)compile and (re)run
 - The next time you login the ivy machine, do the following to set up
 ```
-cd /dune/app/users/flynnguo/NDEff/DUNE_ND_GeoEff/
+cd /exp/dune/app/users/flynnguo/NDEff/DUNE_ND_GeoEff/
 #
 # In case you log out, need to source setup.sh to setup ROOT
 #
@@ -179,14 +179,14 @@ source setup.sh
 ```
 - Produce a root file containing throws and the hadron throw result
 ```
-cd /dune/app/users/flynnguo/NDEff/DUNE_ND_GeoEff/app
+cd /exp/dune/app/users/flynnguo/NDEff/DUNE_ND_GeoEff/app
 make runGeoEffFDEvtSim                                                                             # Compile program
 cd ../bin
 ./runGeoEffFDEvtSim /pnfs/dune/persistent/users/flynnguo/myFDntuples/<xxx>                         # <xxx> is name of one myntuple root file, eg. myntuple_61454381_991.root
 ```
 #### 3. Use screen option even w/o connection to FNAL machine to (Re)compile and (re)run 
 ```
-cd /dune/app/users/flynnguo/NDEff/DUNE_ND_GeoEff/
+cd /exp/dune/app/users/flynnguo/NDEff/DUNE_ND_GeoEff/
 screen
 source setup.sh
 cd app/
@@ -197,7 +197,7 @@ nohup ./runGeoEffFDEvtSim >& out_throws_nohup.log &
 # To detach from the screen session, press Ctrl+a (release) and then d to detach the process/screen.
 # To resume detached process, use: screen -r
 # 10k evts: 6.20pm start, end second day 4:52am, 10hrs32mins
-# Copy the output root file into local laptop: scp flynnguo@dunegpvm15.fnal.gov:/dune/app/users/flynnguo/NDEff/DUNE_ND_GeoEff/bin/Output_FDGeoEff.root .
+# Copy the output root file into local laptop: scp flynnguo@dunegpvm15.fnal.gov:/exp/dune/app/users/flynnguo/NDEff/DUNE_ND_GeoEff/bin/Output_FDGeoEff.root .
 ```
 - Resume the screen session
 ```
@@ -206,7 +206,7 @@ screen -r
 #### 4. Run grid jobs (Recommended)
 First get the work env setup:
 ```
-cd /dune/app/users/flynnguo
+cd /exp/dune/app/users/flynnguo
 wget https://raw.githubusercontent.com/FlynnYGUO/NeutrinoPhysics/main/GEC/setupNDEff-grid.sh --no-check-certificate
 ```
 Suppose the input FD ntuples are in this ```pnfs``` directory,
@@ -232,7 +232,7 @@ source /cvmfs/dune.opensciencegrid.org/products/dune/setup_dune.sh
 setup jobsub_client
 
 # this submits N jobs (N = number of input files, so each job runs 1 file)
-jobsub_submit -G dune -N 8104 --memory=8GB --disk=1GB --expected-lifetime=3h --cpu=1 --resource-provides=usage_model=DEDICATED,OPPORTUNISTIC,OFFSITE --tar_file_name=dropbox:///dune/app/users/flynnguo/NDEff.tar.gz --use-cvmfs-dropbox -l '+SingularityImage=\"/cvmfs/singularity.opensciencegrid.org/fermilab/fnal-wn-sl7:latest\"' --append_condor_requirements='(TARGET.HAS_Singularity==true&&TARGET.HAS_CVMFS_dune_opensciencegrid_org==true&&TARGET.HAS_CVMFS_larsoft_opensciencegrid_org==true&&TARGET.CVMFS_dune_opensciencegrid_org_REVISION>=1105&&TARGET.HAS_CVMFS_fifeuser1_opensciencegrid_org==true&&TARGET.HAS_CVMFS_fifeuser2_opensciencegrid_org==true&&TARGET.HAS_CVMFS_fifeuser3_opensciencegrid_org==true&&TARGET.HAS_CVMFS_fifeuser4_opensciencegrid_org==true)' file:///dune/app/users/flynnguo/run_NDEff_autogrid.sh
+jobsub_submit -G dune -N 8104 --memory=8GB --disk=1GB --expected-lifetime=3h --cpu=1 --resource-provides=usage_model=DEDICATED,OPPORTUNISTIC,OFFSITE --tar_file_name=dropbox:///exp/dune/app/users/flynnguo/NDEff.tar.gz --use-cvmfs-dropbox -l '+SingularityImage=\"/cvmfs/singularity.opensciencegrid.org/fermilab/fnal-wn-sl7:latest\"' --append_condor_requirements='(TARGET.HAS_Singularity==true&&TARGET.HAS_CVMFS_dune_opensciencegrid_org==true&&TARGET.HAS_CVMFS_larsoft_opensciencegrid_org==true&&TARGET.CVMFS_dune_opensciencegrid_org_REVISION>=1105&&TARGET.HAS_CVMFS_fifeuser1_opensciencegrid_org==true&&TARGET.HAS_CVMFS_fifeuser2_opensciencegrid_org==true&&TARGET.HAS_CVMFS_fifeuser3_opensciencegrid_org==true&&TARGET.HAS_CVMFS_fifeuser4_opensciencegrid_org==true)' file:///exp/dune/app/users/flynnguo/run_NDEff_autogrid.sh
 
 
 ```
