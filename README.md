@@ -27,6 +27,9 @@ mkdir FDEff (first time only)
 cd FDEff
 
 source /cvmfs/dune.opensciencegrid.org/products/dune/setup_dune.sh
+# HERE SPECIFY MRB VERSION COMPATIBLE WITH OUR WORK
+-bash-4.2$ unsetup mrb
+-bash-4.2$ setup mrb v4_04_06
 setup dunetpc v09_22_02 -q e19:debug
 [optional if run interactively] setup_fnal_security                     # A FNAL grid proxy to submit jobs and access data in dCache via xrootd or ifdh.
 
