@@ -26,9 +26,9 @@ cd /exp/dune/app/users/flynnguo                                             # Re
 mkdir FDEff (first time only)
 cd FDEff
 
+source /cvmfs/dune.opensciencegrid.org/products/dune/setup_dune.sh
 unsetup mrb
 setup mrb -o
-source /cvmfs/dune.opensciencegrid.org/products/dune/setup_dune.sh
 setup dunetpc v09_22_02 -q e19:debug
 [optional if run interactively] setup_fnal_security                     # A FNAL grid proxy to submit jobs and access data in dCache via xrootd or ifdh.
 
@@ -51,9 +51,9 @@ mrb b                                                                   # Compil
 #### 1. General way
 - The next time you login a DUNE FNAL machine (dunegpvm*), do the following to set up:
 ```
+source /cvmfs/dune.opensciencegrid.org/products/dune/setup_dune.sh
 unsetup mrb
 setup mrb -o
-source /cvmfs/dune.opensciencegrid.org/products/dune/setup_dune.sh
 setup dunetpc v09_22_02 -q e19:debug
 source /exp/dune/app/users/flynnguo/FDEff/localProducts_larsoft_v09_22_02_debug_e19/setup
 mrbsetenv
@@ -87,9 +87,9 @@ The instruction is base on the [DUNE computing tutorial](https://wiki.dunescienc
 Once the above is compiled and runs without problem interactively, you can start to produce a tarball. 
 At the beginning, you need to set the environment
 ```
+source /cvmfs/dune.opensciencegrid.org/products/dune/setup_dune.sh
 unsetup mrb
 setup mrb -o
-source /cvmfs/dune.opensciencegrid.org/products/dune/setup_dune.sh
 setup dunetpc v09_22_02 -q e19:debug
 source /exp/dune/app/users/flynnguo/FDEff/localProducts_larsoft_v09_22_02_debug_e19/setup
 mrbsetenv
