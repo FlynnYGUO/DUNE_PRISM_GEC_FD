@@ -29,7 +29,7 @@ cd FDEff
 source /cvmfs/dune.opensciencegrid.org/products/dune/setup_dune.sh
 # HERE SPECIFY MRB VERSION COMPATIBLE WITH OUR WORK
 -bash-4.2$ unsetup mrb
--bash-4.2$ setup mrb v4_04_06
+-bash-4.2$ setup mrb -o
 setup dunetpc v09_22_02 -q e19:debug
 [optional if run interactively] setup_fnal_security                     # A FNAL grid proxy to submit jobs and access data in dCache via xrootd or ifdh.
 
@@ -54,7 +54,7 @@ mrb b                                                                   # Compil
 ```
 source /cvmfs/dune.opensciencegrid.org/products/dune/setup_dune.sh
 unsetup mrb
-setup mrb v4_04_06
+setup mrb -o
 setup dunetpc v09_22_02 -q e19:debug
 source /exp/dune/app/users/flynnguo/FDEff/localProducts_larsoft_v09_22_02_debug_e19/setup
 mrbsetenv
@@ -90,7 +90,7 @@ At the beginning, you need to set the environment
 ```
 source /cvmfs/dune.opensciencegrid.org/products/dune/setup_dune.sh
 unsetup mrb
-setup mrb v4_04_06
+setup mrb -o
 setup dunetpc v09_22_02 -q e19:debug
 source /exp/dune/app/users/flynnguo/FDEff/localProducts_larsoft_v09_22_02_debug_e19/setup
 mrbsetenv
