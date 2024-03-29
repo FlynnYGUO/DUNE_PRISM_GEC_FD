@@ -89,6 +89,8 @@ Once the above is compiled and runs without problem interactively, you can start
 At the beginning, you need to set the environment
 ```
 source /cvmfs/dune.opensciencegrid.org/products/dune/setup_dune.sh
+unsetup mrb
+setup mrb v4_04_06
 setup dunetpc v09_22_02 -q e19:debug
 source /exp/dune/app/users/flynnguo/FDEff/localProducts_larsoft_v09_22_02_debug_e19/setup
 mrbsetenv
