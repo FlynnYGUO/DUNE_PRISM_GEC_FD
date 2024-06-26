@@ -11,6 +11,7 @@ Geometric Efficiency Correction from hadrons at FD
 > - Some [instructions](https://uscms.org/uscms_at_work/physics/computing/getstarted/uaf.shtml#MacBigSur) on connecting the FNAL machine 
 > Dr. Wei Shi's instruction: https://github.com/weishi10141993/myntuples#dune-fnal-machines-dunegpvm-environment-setup
 > - Use ROOT command on dunegpvm machine: ```source /cvmfs/sft.cern.ch/lcg/app/releases/ROOT/6.24.02/x86_64-centos7-gcc48-opt/bin/thisroot.sh```
+> - FNAL: [SL7 to Alma9 conversion](https://wiki.dunescience.org/wiki/SL7_to_Alma9_conversion)
 ### I. Preparations
 #### 1. [Apply a Fermilab account](https://get-connected.fnal.gov/accessandbadging/access/)
 - Log in:
