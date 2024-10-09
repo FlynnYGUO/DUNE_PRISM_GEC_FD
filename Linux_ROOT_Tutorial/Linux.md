@@ -18,3 +18,5 @@
 ``` vi <filename> ``` Open and edit the file. For more info. on vi editor, plz see this [tutorial](https://www.cs.colostate.edu/helpdocs/vi.html)  
 ``` git clone https://github.com/FlynnYGUO/DUNE_ND_GeoEff.git -b FD_Wei .``` Git clone a branch to local    
 ``` rsync -e ssh -avSz ./* fyguo@ivy.physics.sunysb.edu:/home/fyguo/DUNE_ND_GeoEff``` Update all files in current folder to IVY machine  
+```git branch -r``` check all git branches  
+```git checkout <xxx>```change to xxx brance
