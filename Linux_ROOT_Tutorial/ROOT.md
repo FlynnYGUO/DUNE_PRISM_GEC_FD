@@ -8,3 +8,4 @@
 - ``` hadd out.root FHC.100919*``` Merge all similar CAF files into one file named out.root    
 - * How to draw [ratio plot](https://root.cern/doc/v608/ratioplotOld_8C.html)
 - ```root NDCAF.root   .ls    caftree->Print();  caftree->Show(); caftree->Scan("isRHC"); caftree->Scan("isRHC","isRHC!=0")``` Read ntuple files in root
+- ```caf->Print("toponly");    TH1* nn = (TH1*) _file0->Get("norm");  nn->Print("all")``` norm is TH1D, caf is TTree
